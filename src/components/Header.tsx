@@ -4,24 +4,52 @@ export function Header() {
   return (
     <header className="header">
       <div className="header-container">
-        <div className="logo-section">
+        <div className="left-edge-section">
           <div className="logo">
-            <div className="logo-icon">🎓</div>
-            <div className="logo-text">URCET</div>
-          </div>
-          <div className="title-section">
-            <h1 className="title">Campus Assistant</h1>
-            <p className="subtitle">Usha Rama College of Engineering and Technology</p>
+            <img 
+              src="/urcet-logo.png" 
+              alt="USHA RAMA College Logo" 
+              className="logo-image"
+            />
           </div>
         </div>
-        <div className="header-actions">
-          <div className="nav-items">
-            <span className="nav-item">Help</span>
-            <span className="nav-item">About</span>
-          </div>
-          <div className="status-indicator">
-            <span className="status-dot"></span>
-            <span className="status-text">AI Online</span>
+        
+        <div className="center-section">
+          <h1 className="college-title">
+            <a 
+              href="https://usharama.edu.in/home" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="college-link"
+            >
+              <span className="college-name-highlight">USHA RAMA COLLEGE OF ENGINEERING AND TECHNOLOGY</span>
+            </a>
+          </h1>
+          <p className="campus-subtitle">Campus Assistant</p>
+        </div>
+        
+        <div className="right-section">
+          <div className="accreditation-logos">
+            <img 
+              src="/naac-logo.png" 
+              alt="NAAC A Grade Accredited" 
+              className="accreditation-image"
+            />
+            <img 
+              src="/affiliated.png" 
+              alt="JNTUK Affiliated" 
+              className="accreditation-image"
+            />
+            <img 
+              src="/aicte.png" 
+              alt="AICTE Approved" 
+              className="accreditation-image"
+            />
+            <img 
+              src="/iso-21001-2018.png" 
+              alt="ISO 21001:2018 Certified" 
+              className="accreditation-image"
+            />
           </div>
         </div>
       </div>

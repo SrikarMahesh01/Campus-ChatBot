@@ -33,7 +33,7 @@ export function ChatInput({ onSendMessage, disabled = false }: ChatInputProps) {
           value={message}
           onChange={(e) => setMessage(e.target.value)}
           onKeyPress={handleKeyPress}
-          placeholder="Type your question about URCET..."
+          placeholder={disabled ? "URCET Assistant is typing..." : "Type your question about URCET..."}
           className="chat-input"
           disabled={disabled}
           maxLength={500}

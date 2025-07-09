@@ -1,4 +1,4 @@
-import { useState, useRef, useEffect } from 'react';
+import { useState, useRef, useEffect, forwardRef, useImperativeHandle } from 'react';
 import { MessageCircle, X, Minimize2, Zap } from 'lucide-react';
 import type { Message } from '../types/chatbot';
 import { ChatbotService } from '../services/chatbotService';
@@ -7,8 +7,16 @@ import { ChatInput } from './ChatInput';
 import { QuickActions } from './QuickActions';
 import './Chatbot.css';
 
-export function Chatbot() {
-  const [isOpen, setIsOpen] = useState(false);
+interface ChatbotProps {
+  isOpen: boolean;
+  setIsOpen: (isOpen: boolean) => void;
+}
+
+export interface ChatbotRef {
+  openChat: () => void;
+}
+
+export const Chatbot = forwardRef<ChatbotRef, ChatbotProps>(({ isOpen, setIsOpen }, ref) => {
   const [isMinimized, setIsMinimized] = useState(false);
   const [showQuickActions, setShowQuickActions] = useState(false);
   const [messages, setMessages] = useState<Message[]>([]);
@@ -16,12 +24,19 @@ export function Chatbot() {
   const messagesEndRef = useRef<HTMLDivElement>(null);
   const chatbotService = useRef(new ChatbotService());
 
+  useImperativeHandle(ref, () => ({
+    openChat: () => {
+      setIsOpen(true);
+      setIsMinimized(false);
+    }
+  }));
+
   useEffect(() => {
     if (isOpen && messages.length === 0) {
       // Send welcome message
       const welcomeMessage: Message = {
         id: 'welcome',
-        text: 'Hello! Welcome to URCET Campus Assistant. I can help you with information about academics, events, departments, and campus facilities. How can I assist you today?',
+        text: 'Hello! Welcome to URCET Campus Assistant. I can help you with information about academics, events, departments, facilities, admissions, and campus life at Usha Rama College of Engineering and Technology. How can I assist you today?',
         sender: 'bot',
         timestamp: new Date(),
         category: 'general'
@@ -60,18 +75,34 @@ export function Chatbot() {
     // Hide quick actions when user sends a message
     setShowQuickActions(false);
     
-    // Show typing indicator
-    setIsTyping(true);
+    // Add a small delay before showing typing indicator for more natural feel
+    setTimeout(() => {
+      setIsTyping(true);
+    }, 300);
     
-    // Simulate thinking time
-    await new Promise(resolve => setTimeout(resolve, 1000));
-    
-    // Get bot response
-    const response = chatbotService.current.findResponse(userMessage) || 
-                    chatbotService.current.getDefaultResponse();
-    
-    setIsTyping(false);
-    addMessage(response.text, 'bot', response.category);
+    try {
+      // Get AI response using Gemini API
+      const response = await chatbotService.current.generateResponse(userMessage);
+      
+      // Add a minimum delay to show the typing animation (even for quick responses)
+      const minDelay = 1000; // 1 second minimum
+      setTimeout(() => {
+        setIsTyping(false);
+        addMessage(response.text, 'bot', response.category);
+      }, minDelay);
+      
+    } catch (error) {
+      console.error('Error getting response:', error);
+      
+      // Ensure typing indicator is hidden even on error
+      setTimeout(() => {
+        setIsTyping(false);
+        
+        // Fallback to default response
+        const fallbackResponse = chatbotService.current.getDefaultResponse();
+        addMessage(fallbackResponse.text, 'bot', fallbackResponse.category);
+      }, 800);
+    }
   };
 
   const handleQuickAction = (query: string) => {
@@ -170,4 +201,6 @@ export function Chatbot() {
       )}
     </>
   );
-}
+});
+
+Chatbot.displayName = 'Chatbot';

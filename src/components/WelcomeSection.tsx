@@ -1,7 +1,11 @@
 import { MessageCircle, Book, Calendar, Building, MapPin, Zap, Users, Clock } from 'lucide-react';
 import './WelcomeSection.css';
 
-export function WelcomeSection() {
+interface WelcomeSectionProps {
+  onStartChatting: () => void;
+}
+
+export function WelcomeSection({ onStartChatting }: WelcomeSectionProps) {
   const features = [
     {
       icon: <Book size={20} />,
@@ -68,11 +72,14 @@ export function WelcomeSection() {
             </div>
 
             <div className="hero-cta">
-              <div className="chat-prompt">
+              <button 
+                className="chat-prompt"
+                onClick={onStartChatting}
+              >
                 <MessageCircle size={18} />
                 <span>Start chatting now →</span>
-              </div>
-              <p className="chat-hint">Click the chat icon in the bottom-right corner</p>
+              </button>
+              <p className="chat-hint">Click the button above to start chatting</p>
             </div>
           </div>
         </div>
