@@ -1,0 +1,200 @@
+import { GoogleGenerativeAI } from '@google/generative-ai';
+import type { ChatResponse } from '../types/chatbot';
+import { chatbotData } from '../data/chatbotData';
+
+export class ChatbotService {
+  private responses: ChatResponse[] = chatbotData.responses;
+  private genAI!: GoogleGenerativeAI;
+  private model: any;
+  private readonly GEMINI_API_KEY = import.meta.env.VITE_GEMINI_API_KEY || 'AIzaSyA9wucAcsQz4zVAmw4Ilb_37alv5AiA28g';
+
+  constructor() {
+    try {
+      if (!this.GEMINI_API_KEY) {
+        throw new Error('Gemini API key is missing');
+      }
+      this.initializeGemini();
+    } catch (error) {
+      console.error('Failed to initialize chatbot service:', error);
+      throw new Error('Failed to initialize chatbot service');
+    }
+  }
+
+  private initializeGemini() {
+    console.log('Initializing Gemini with API key present');
+    this.genAI = new GoogleGenerativeAI(this.GEMINI_API_KEY);
+    this.model = this.genAI.getGenerativeModel({ 
+      model: "gemini-2.5-flash",
+      generationConfig: {
+        temperature: 0.7,
+        maxOutputTokens: 1024,
+      },
+    });
+    console.log('Successfully initialized Gemini model');
+  }
+
+  private getCollegeContext(): string {
+    return `
+You are a helpful campus assistant for Usha Rama College of Engineering and Technology (URCET). 
+Follow these strict guidelines:
+1. Provide direct, concise answers that exactly match the question asked
+2. Do not list all department heads when asked about one specific department
+3. Keep responses focused and brief
+4. Include only relevant information
+5. If asked about a specific role or person, only provide information about that specific role or person
+6. Format responses in a clean, easy-to-read way
+7. When discussing leadership roles, only mention the specific role being asked about
+
+URCET Detailed Information:
+- Full Name: Usha Rama College of Engineering and Technology
+- Established: 2008 by Usha Rama Educational Academy
+- Accreditations: NAAC A Grade, AICTE approved, affiliated with JNTU-Kakinada, ISO 21001:2018 certified
+- Sponsorship: Chicago-based Multi Million Dollar Advansoft group
+- Location: NH-16, Telaprolu village, 30 kms from Vijayawada towards Eluru, near Gannavaram Airport
+
+Leadership Structure:
+{
+  "chairman": "Sri Sunkara Ramabrahmam",
+  "vicePresident": "Sri Arun Lanka",
+  "secretary": "Sri Anil Sunkara",
+  "member": "Sri Ajay Sunkara",
+  "principal": "Dr. G V K S V Prasad"
+}
+
+When asked about any leadership position, only provide information about the specific role requested. Do not list other leadership positions unless explicitly asked for the full leadership team.`;
+  }
+
+  public async generateResponse(query: string): Promise<ChatResponse> {
+    try {
+      // First priority: Check predefined responses for exact matches
+      const predefinedResponse = this.findResponse(query);
+      if (predefinedResponse) {
+        return predefinedResponse;
+      }
+
+      // Second priority: Use Gemini for general conversation
+      if (this.isGeneralConversation(query)) {
+        try {
+          const prompt = [{
+            role: 'user',
+            parts: [{ text: `${this.getCollegeContext()}\n\nUser Question: "${query}"\n\nProvide a direct and specific answer only for this question. Do not include any additional information:` }]
+          }];
+          
+          const chat = this.model.startChat();
+          const result = await chat.sendMessage(prompt[0].parts[0].text);
+          const text = result.response.text();
+          
+          return {
+            question: query,
+            answer: text,
+            category: 'General',
+            keywords: ['conversation']
+          };
+        } catch (error) {
+          console.error('Gemini API error for general query:', error);
+          return this.getDefaultResponse();
+        }
+      }
+
+      // Third priority: Use Gemini with college context for specific queries
+      try {
+        const prompt = [{
+          role: 'user',
+          parts: [{ text: `${this.getCollegeContext()}\n\nUser Question: "${query}"\n\nProvide a direct and specific answer only for this question. Do not include any additional information:` }]
+        }];
+        
+        const chat = this.model.startChat();
+        const result = await chat.sendMessage(prompt[0].parts[0].text);
+        const text = result.response.text();
+        
+        return {
+          question: query,
+          answer: text,
+          category: 'College Info',
+          keywords: ['urcet']
+        };
+      } catch (error) {
+        console.error('Gemini API error for specific query:', error);
+        return this.getDefaultResponse();
+      }
+    } catch (error) {
+      console.error('Error generating response:', error);
+      return this.getDefaultResponse();
+    }
+  }
+
+  private findResponse(query: string): ChatResponse | null {
+    // Normalize the query
+    const normalizedQuery = query.toLowerCase().trim();
+    
+    // Look for exact matches
+    const exactMatch = this.responses.find(
+      response => response.question.toLowerCase() === normalizedQuery
+    );
+    if (exactMatch) {
+      return exactMatch;
+    }
+
+    // Look for keyword matches
+    const keywordMatch = this.responses.find(response =>
+      response.keywords.some(keyword =>
+        normalizedQuery.includes(keyword.toLowerCase())
+      )
+    );
+    if (keywordMatch) {
+      return keywordMatch;
+    }
+
+    return null;
+  }
+
+  private getDefaultResponse(): ChatResponse {
+    return {
+      question: '',
+      answer: "I apologize, but I'm having trouble understanding that. Could you please rephrase your question about URCET?",
+      category: 'General',
+      keywords: ['error', 'default']
+    };
+  }
+
+  private isGeneralConversation(query: string): boolean {
+    const generalPatterns = [
+      'hello',
+      'hi',
+      'hey',
+      'good morning',
+      'good afternoon',
+      'good evening',
+      'how are you',
+      'what\'s up',
+      'thank you',
+      'thanks',
+      'bye',
+      'goodbye'
+    ];
+    
+    return generalPatterns.some(pattern => 
+      query.toLowerCase().includes(pattern.toLowerCase())
+    );
+  }
+
+  public getResponsesByCategory(category: string): ChatResponse[] {
+    return this.responses.filter(response => response.category === category);
+  }
+
+  public getAllCategories(): string[] {
+    const categories = new Set(this.responses.map(response => response.category));
+    return Array.from(categories);
+  }
+
+  public searchResponses(query: string): ChatResponse[] {
+    const normalizedQuery = query.toLowerCase().trim();
+    
+    return this.responses.filter(response =>
+      response.keywords.some(keyword => 
+        keyword.toLowerCase().includes(normalizedQuery)
+      ) ||
+      response.answer.toLowerCase().includes(normalizedQuery)
+    );
+  }
+}

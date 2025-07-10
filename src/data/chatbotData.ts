@@ -2,284 +2,224 @@ import type { ChatbotData } from '../types/chatbot';
 
 export const chatbotData: ChatbotData = {
   responses: [
-    // Enhanced responses from URCET website
     {
-      id: 'enhanced-home-1',
-      text: 'URCET (Usha Rama College of Engineering and Technology) is approved by AICTE and affiliated to JNTU-Kakinada. It was established by Usha Rama Educational Academy with the aim of providing quality education to students and producing young technocrats. The college is sponsored by Chicago-based Multi Million Dollar Advansoft group.',
-      category: 'general',
-      keywords: ['urcet overview', 'about urcet', 'college information', 'approved', 'aicte', 'jntu affiliated', 'advansoft', 'chicago sponsorship', 'what is urcet', 'usha rama college']
+      question: "What is URCET?",
+      answer: "Usha Rama College of Engineering and Technology (URCET) is approved by AICTE and affiliated to JNTU-Kakinada. Established by Usha Rama Educational Academy in 2008, with the aim of inculcating quality education to students and producing young technocrats with good knowledge. The college is sponsored by Chicago-based Multi Million Dollar Advansoft group. URCET empowers children to reach their potential through excellence in technical education.",
+      category: "general",
+      keywords: ["urcet overview", "about urcet", "college information", "approved", "aicte", "jntu affiliated", "advansoft", "chicago sponsorship"]
     },
     {
-      id: 'enhanced-principal-info',
-      text: 'Dr. G V K S V Prasad is the Principal of URCET. He has a Doctorate from NIT Warangal with 36 years of teaching, consultancy and research experience. He has successfully completed many sponsored research projects funded by AICTE and has received multiple awards including University Appreciation award from JNTUK in 2024 and Bhishma Acharya Award in 2023.',
-      category: 'general',
-      keywords: ['principal profile', 'principal message', 'leadership', 'academic leadership', 'principal information', 'dr prasad', 'principal name']
+      question: "What is URCET's vision and mission?",
+      answer: "VISION: To emerge as a centre of excellence in technical education by imparting quality teaching learning practices and research for the transformation of society.\n\nMISSION: Provide an ideal and the best class infrastructure to foster exploration in engineering and research. We focus on creating well-rounded engineers with strong technical and ethical foundations.",
+      category: "general",
+      keywords: ["vision", "mission", "goals", "excellence", "technical education"]
     },
     {
-      id: 'enhanced-contact-details',
-      text: 'URCET is located on NH-16 in Telaprolu village, 30 kms away from Vijayawada towards Eluru and very near to Gannavaram Airport.\n\nContact Details:\nPhone: 0866-2527558, 2527565\nMobile: 9949712255\nEmail: principal@usharama.edu.in',
-      category: 'general',
-      keywords: ['contact urcet', 'contact information', 'phone number', 'email address', 'how to contact', 'reach urcet', 'urcet address', 'location', 'contact details']
+      question: "Who is the Principal of URCET?",
+      answer: "Dr. G V K S V Prasad is the Principal of URCET. He has a Doctorate from NIT Warangal with 36 years of teaching, consultancy and research experience. He has successfully completed many sponsored research projects funded by AICTE, visited many countries, and delivered guest lectures. He received the University Appreciation award for Senior Principal from JNTUK in Aug 2024, Bhishma Acharya Award in 2023, and Principal Excellence award from Eduskills in 2022.",
+      category: "leadership",
+      keywords: ["principal", "dr prasad", "college head", "principal profile", "leadership", "academic leadership"]
     },
     {
-      id: 'college-leadership',
-      text: 'URCET Leadership Team:\n\n• Chairman: Sri Sunkara Ramabrahmam\n• Vice President: Sri Arun Lanka\n• Secretary & Correspondent: Sri Anil Sunkara\n• Member: Sri Ajay Sunkara\n• Principal: Dr. G V K S V Prasad\n\nThe college is governed by an experienced leadership team committed to providing quality education and institutional excellence.',
-      category: 'general',
-      keywords: ['college leadership', 'chairman', 'vice president', 'secretary', 'correspondent', 'member', 'sunkara ramabrahmam', 'arun lanka', 'anil sunkara', 'ajay sunkara', 'management team', 'college management', 'governing body', 'leadership team']
+      question: "Who is the Vice Principal of URCET?",
+      answer: "Dr. A Madana Mohan Rao is the Vice Principal of URCET.",
+      category: "leadership",
+      keywords: ["vice principal", "leadership", "administration", "dr madana mohan rao"]
     },
     {
-      id: 'chairman-sunkara-ramabrahmam',
-      text: 'The Chairman of URCET is Sri Sunkara Ramabrahmam. He leads the governing body and provides strategic direction for the institution\'s growth and development.',
-      category: 'general',
-      keywords: ['chairman', 'sunkara ramabrahmam', 'college chairman', 'who is chairman', 'chairman name', 'chairman of urcet', 'ramabrahmam']
+      question: "Who are the leaders of URCET?",
+      answer: "The URCET Leadership Team consists of:\n\n🏛️ **Executive Leadership:**\n• Chairman: Sri Sunkara Ramabrahmam\n• Vice President: Sri Arun Lanka\n• Secretary & Correspondent: Sri Anil Sunkara\n• Member: Sri Ajay Sunkara\n\n🎓 **Academic Leadership:**\n• Principal: Dr. G V K S V Prasad\n• Vice Principal: Dr. A Madana Mohan Rao\n• Dean Research & Development: Dr. G Sagar\n\nThis experienced leadership team is committed to institutional excellence and transforming technical education.",
+      category: "leadership",
+      keywords: ["leadership", "management", "team", "chairman", "vice president", "secretary", "principal", "vice principal", "dean"]
     },
     {
-      id: 'vice-president-arun-lanka',
-      text: 'The Vice President of URCET is Sri Arun Lanka. He works closely with the leadership team to oversee college operations and strategic initiatives.',
-      category: 'general',
-      keywords: ['vice president', 'arun lanka', 'college vice president', 'who is vice president', 'vp', 'lanka', 'vice president name']
+      question: "Where is URCET located and how can I contact?",
+      answer: "URCET is located on NH-16 in Telaprolu village, 30 kms away from Vijayawada towards Eluru and very near to Gannavaram Airport.\n\nContact Details:\n📞 Phone: 0866-2527558, 2527565\n📱 Mobile: 9949712255\n📧 Email: principal@usharama.edu.in\n🌐 Website: usharama.edu.in",
+      category: "general",
+      keywords: ["location", "contact", "address", "phone", "email", "contact urcet", "contact information", "how to contact", "reach urcet"]
     },
     {
-      id: 'secretary-correspondent-anil-sunkara',
-      text: 'The Secretary & Correspondent of URCET is Sri Anil Sunkara. He handles correspondence and administrative functions, ensuring smooth communication and operations.',
-      category: 'general',
-      keywords: ['secretary', 'correspondent', 'anil sunkara', 'college secretary', 'who is secretary', 'secretary correspondent', 'anil', 'correspondence']
+      question: "What departments and courses does URCET offer?",
+      answer: "URCET offers comprehensive engineering programs:\n\n🎓 B.Tech Programs:\n• Computer Science Engineering (since 2008)\n• Artificial Intelligence & Machine Learning\n• Artificial Intelligence & Data Science\n• Electronics & Communication Engineering\n• Electrical & Electronics Engineering\n• Information Technology\n• Mechanical Engineering\n• Civil Engineering\n\n🏗️ Polytechnic (Diploma) Programs:\n• Computer Science\n• Electronics & Communication Engineering\n• Electrical & Electronics Engineering\n• Mechanical Engineering\n• Civil Engineering\n\n🎯 M.Tech Programs:\n• Cyber Security\n• Robotics\n• AI in Computer Science Engineering\n• AI & Machine Learning in CSE\n• VLSI & Embedded Systems",
+      category: "academics",
+      keywords: ["departments", "courses", "programs", "btech", "diploma", "engineering programs", "academic departments", "btech courses", "engineering disciplines"]
     },
     {
-      id: 'member-ajay-sunkara',
-      text: 'Sri Ajay Sunkara is a Member of the URCET governing body. He contributes to the decision-making process and supports the college\'s educational mission.',
-      category: 'general',
-      keywords: ['member', 'ajay sunkara', 'governing body member', 'college member', 'ajay', 'board member', 'management member']
+      question: "Tell me about CSE Department",
+      answer: "The Department of Computer Science Engineering has been successfully functioning since 2008. It offers B.Tech (Computer Science and Engineering) and M.Tech programs. The department focuses on:\n\n• Software Development & Programming\n• Research Laboratories\n• Modern Infrastructure\n• Industry Collaboration\n• Practical Learning Approach\n\nThe CSE department is equipped with state-of-the-art facilities and experienced faculty to prepare students for the evolving tech industry.",
+      category: "academics",
+      keywords: ["cse department", "computer science engineering", "software development", "programming", "cse course", "computer science"]
     },
     {
-      id: 'management-team-overview',
-      text: 'URCET Management Team includes:\n\n• Chairman: Sri Sunkara Ramabrahmam\n• Vice President: Sri Arun Lanka\n• Secretary & Correspondent: Sri Anil Sunkara\n• Member: Sri Ajay Sunkara\n\nThis experienced team works together to ensure the college maintains high standards in education and administration.',
-      category: 'general',
-      keywords: ['management team', 'college management', 'governing team', 'college administration', 'leadership overview', 'management overview', 'all management']
+      question: "Tell me about AI/ML Department",
+      answer: "Bachelor of Technology (Artificial Intelligence & Machine Learning) is a four-year programme (full time) affiliated to JNTUK and approved by AICTE. Key features:\n\n🤖 Focus Areas:\n• Machine Learning & Deep Learning\n• AI Algorithms & Automation\n• Data Science & Analytics\n• Decision Making Systems\n\n🎯 Benefits:\n• High industry demand\n• Wide range of applications\n• Future-ready curriculum\n• Research opportunities\n\nAI is widely recognized as the facility that will fuel the future global digital economy.",
+      category: "academics",
+      keywords: ["ai ml department", "artificial intelligence", "machine learning", "data science", "ai algorithms", "deep learning"]
     },
     {
-      id: 'vice-principal-madana-mohan-rao',
-      text: 'The Vice Principal of URCET is Dr. A Madana Mohan Rao. He assists the Principal in academic administration and plays a key role in maintaining academic standards and institutional development.',
-      category: 'general',
-      keywords: ['vice principal', 'dr madana mohan rao', 'madana mohan rao', 'college vice principal', 'who is vice principal', 'academic administration', 'vice principal name']
+      question: "Tell me about ECE Department",
+      answer: "The Department of Electronics & Communication Engineering aims to impart value-based technical education and train well-rounded engineers.\n\n🔬 Specializations:\n• VLSI & Embedded Systems (since 2012-13)\n• Microwave & Optical Communication\n• IoT & Digital Signal Processing\n\n🏢 Laboratory Facilities:\n• Microwave and Optical Communication Lab\n• Microprocessor and Microcontroller Lab\n• Linear & Digital ICs Lab\n• Communications Lab, Simulation Lab\n• EDC Lab, IoT Lab, DSP & VLSI Lab\n\nThe department maintains industry collaboration and gives students realistic views of the Electronics and Communication industry.",
+      category: "academics",
+      keywords: ["ece department", "electronics communication engineering", "electronics", "communication", "embedded systems", "vlsi"]
     },
     {
-      id: 'hod-ai-satya-sree',
-      text: 'The Head of Department (HOD) for Artificial Intelligence is Dr. K P N V Satya Sree. She leads the AI department and oversees the academic programs in Artificial Intelligence & Machine Learning.',
-      category: 'academics',
-      keywords: ['hod of ai', 'head of department ai', 'dr satya sree', 'k p n v satya sree', 'ai hod', 'artificial intelligence hod', 'satya sree', 'ai department head']
+      question: "Tell me about EEE Department",
+      answer: "The Department of Electrical and Electronics Engineering (EEE) was established in 2008 and is actively engaged in teaching and research with modern laboratories.\n\n⚡ Key Features:\n• Power Systems & Control Systems\n• Energy Storage Systems\n• IEEE Student Branch\n• Research Publications\n• Industry Certifications\n\n🏆 Faculty Achievements:\n• NPTEL-IIT Certificates\n• AICTE Workshop Participation\n• Elite Grades in National Courses\n• Research Publications\n• Energy Swaraj Foundation Awards\n\nFaculty are active in research and continuously update their knowledge with latest technologies.",
+      category: "academics",
+      keywords: ["eee department", "electrical electronics engineering", "power systems", "control systems", "electrical engineering"]
     },
     {
-      id: 'hod-cse-roychoudri-subramani',
-      text: 'The Head of Department (HOD) for Computer Science Engineering is Dr. Roychoudri Subramani. He leads the CSE department and manages the academic programs in Computer Science Engineering.',
-      category: 'academics',
-      keywords: ['hod of cse', 'head of department cse', 'dr roychoudri subramani', 'roychoudri subramani', 'cse hod', 'computer science hod', 'subramani', 'cse department head']
+      question: "Tell me about IT Department",
+      answer: "The Department of Information Technology was established to bridge the gap between academic grounding and industry demands in the dynamic IT field.\n\n💻 Focus Areas:\n• Information Technology Systems\n• Database Management\n• Network Administration\n• Web Development\n• Software Systems\n\n🎯 Department Objectives:\n• Produce quality graduates with generalized IT knowledge\n• Industry-ready curriculum\n• Practical exposure to latest technologies\n• Strong foundation in IT fundamentals\n\nThe department stays updated with rapid changes in the IT industry and World Wide Web technologies.",
+      category: "academics",
+      keywords: ["it department", "information technology", "networks", "database", "web development", "software systems"]
     },
     {
-      id: 'hod-ece-battula-nancharaiah',
-      text: 'The Head of Department (HOD) for Electronics & Communication Engineering is Dr. Battula Nancharaiah. He oversees the ECE department and its academic programs in Electronics & Communication Engineering.',
-      category: 'academics',
-      keywords: ['hod of ece', 'head of department ece', 'dr battula nancharaiah', 'battula nancharaiah', 'ece hod', 'electronics communication hod', 'nancharaiah', 'ece department head']
+      question: "Tell me about Mechanical Engineering Department",
+      answer: "The Department of Mechanical Engineering was established in 2010 with AICTE approval and an intake of 90 seats.\n\n🔧 Core Areas:\n• Manufacturing Processes\n• Design & Analysis\n• Thermal Systems\n• Industrial Automation\n• Mechanical Systems\n\n🏭 Infrastructure:\n• Modern laboratories\n• Industry-standard equipment\n• Research facilities\n• Practical learning environment\n\nThe department offers undergraduate degree programs focusing on both theoretical knowledge and practical application in mechanical engineering.",
+      category: "academics",
+      keywords: ["mechanical engineering", "mech department", "manufacturing", "design", "thermal systems", "industrial automation"]
     },
     {
-      id: 'hod-it-kandula-nagendra',
-      text: 'The Head of Department (HOD) for Information Technology is Kandula Nagendra Vara Prasad. He leads the IT department and manages the academic programs in Information Technology.',
-      category: 'academics',
-      keywords: ['hod of it', 'head of department it', 'kandula nagendra vara prasad', 'nagendra vara prasad', 'it hod', 'information technology hod', 'kandula nagendra', 'it department head']
+      question: "What about placements and training?",
+      answer: "URCET has a dedicated Training & Placement Cell that functions as an autonomous and structured department with state-of-the-art infrastructure.\n\n🏢 Recent Company Visits Include:\n• TCS, Wipro, Cognizant\n• IBM, Infosys, Tech Mahindra\n• Hyundai, Kia Motors\n• Zentech, Global Logic\n• And many more...\n\n📊 Placement Records Available:\n• 2021-2022, 2020-2021\n• 2019-2020, 2018-2019\n• Department-wise placement statistics\n• Multiple role offerings\n\n🎯 Services:\n• Campus recruitment drives\n• Training & development programs\n• Internship opportunities\n• Career guidance\n• Industry interaction\n\nThe placement cell ensures students are industry-ready with proper training and placement support.",
+      category: "placements",
+      keywords: ["placement cell", "campus placements", "job opportunities", "recruitment", "career placement", "company visits"]
     },
     {
-      id: 'hod-eee-kelothu-naresh',
-      text: 'The Head of Department (HOD) for Electrical & Electronics Engineering is Dr. Kelothu Naresh. He oversees the EEE department and its academic programs in Electrical & Electronics Engineering.',
-      category: 'academics',
-      keywords: ['hod of eee', 'head of department eee', 'dr kelothu naresh', 'kelothu naresh', 'eee hod', 'electrical electronics hod', 'naresh', 'eee department head']
+      question: "What facilities does URCET provide?",
+      answer: "URCET provides world-class facilities for comprehensive education:\n\n🏫 Academic Infrastructure:\n• Air-conditioned classrooms with gallery seating\n• Multimedia projectors in all classrooms\n• E-Beam Technology Response Recording\n• Air-conditioned computer labs (600+ systems)\n• Wi-Fi facility across campus\n\n📚 Student Services:\n• Library facility (8:00 AM to 10:00 PM)\n• Free GATE, GRE, and TOEFL coaching\n• Research & Development Lab\n• Transportation from Vijayawanda and surrounding areas\n\n💼 Unique Features:\n• WORK-STUDY programme implementation\n• Highly experienced qualified teaching staff\n• Industry internship programs\n• Modern laboratory facilities\n• Sports and recreational facilities",
+      category: "facilities",
+      keywords: ["college facilities", "infrastructure", "amenities", "services", "work study", "library", "transportation"]
     },
     {
-      id: 'all-hods-overview',
-      text: 'URCET Department Heads (HODs):\n\n• AI Department: Dr. K P N V Satya Sree\n• CSE Department: Dr. Roychoudri Subramani\n• ECE Department: Dr. Battula Nancharaiah\n• IT Department: Kandula Nagendra Vara Prasad\n• EEE Department: Dr. Kelothu Naresh\n\nThese experienced department heads lead their respective departments and ensure quality education in their specialized fields.',
-      category: 'academics',
-      keywords: ['all hods', 'department heads', 'heads of departments', 'hod list', 'department hods', 'academic heads', 'faculty heads', 'departmental leadership']
+      question: "Who is the HOD of CSE Department?",
+      answer: "The Head of Department (HOD) for Computer Science Engineering is Dr. Roychoudri Subramani.",
+      category: "academics",
+      keywords: ["hod", "department heads", "faculty", "cse hod", "computer science head"]
     },
     {
-      id: 'enhanced-departments-info',
-      text: 'URCET offers undergraduate and polytechnic courses across multiple departments:\n\nUndergraduate (B.Tech): Computer Science, Artificial Intelligence & ML, AI & Data Science, ECE, EEE, Information Technology, Mechanical Engineering\n\nPolytechnic (Diploma): Computer Science, ECE, EEE, Mechanical Engineering, Civil Engineering',
-      category: 'academics',
-      keywords: ['departments', 'engineering programs', 'courses offered', 'academic departments', 'btech courses', 'engineering disciplines', 'polytechnic courses']
+      question: "Who is the HOD of AI Department?",
+      answer: "The Head of Department (HOD) for Artificial Intelligence is Dr. K P N V Satya Sree.",
+      category: "academics",
+      keywords: ["hod", "ai", "artificial intelligence", "department head", "ai head"]
     },
     {
-      id: 'enhanced-cse-dept',
-      text: 'The Computer Science Engineering department at URCET has been functioning since 2008. It offers B.Tech in Computer Science Engineering with modern research laboratories, excellent infrastructure, and experienced faculty members focused on software development and programming.',
-      category: 'academics',
-      keywords: ['cse department', 'computer science engineering', 'software development', 'programming', 'cse course', 'computer science', 'cse about']
+      question: "Who is the HOD of ECE Department?",
+      answer: "The Head of Department (HOD) for Electronics & Communication Engineering is Dr. Battula Nancharaiah.",
+      category: "academics",
+      keywords: ["hod", "ece", "electronics", "department head", "electronics head", "communication"]
     },
     {
-      id: 'enhanced-aiml-dept',
-      text: 'URCET offers B.Tech in Artificial Intelligence & Machine Learning and AI & Data Science - four-year full-time programs affiliated to JNTUK and approved by AICTE. These courses focus on AI algorithms, machine learning, automation, and decision-making technologies that fuel the digital economy.',
-      category: 'academics',
-      keywords: ['ai ml department', 'artificial intelligence', 'machine learning', 'data science', 'ai algorithms', 'deep learning', 'ai course', 'ai ml course']
+      question: "Who is the HOD of IT Department?",
+      answer: "The Head of Department (HOD) for Information Technology is Yanamadala Veera Venkata Nagendra Vara Prasad.",
+      category: "academics",
+      keywords: ["hod", "it", "information technology", "department head", "it head"]
     },
     {
-      id: 'enhanced-ece-dept',
-      text: 'The Electronics & Communication Engineering department aims to provide value-based technical education. It features eight state-of-the-art laboratories including Microwave & Optical Communication, Microprocessor & Microcontroller, Communications Lab, DSP & VLSI Lab, and IoT Lab. The department also offers M.Tech in VLSI & Embedded Systems.',
-      category: 'academics',
-      keywords: ['ece department', 'electronics communication engineering', 'electronics', 'communication', 'embedded systems', 'vlsi', 'ece about', 'ece labs']
+      question: "Who is the HOD of EEE Department?",
+      answer: "The Head of Department (HOD) for Electrical & Electronics Engineering is Dr. Kelothu Naresh.",
+      category: "academics",
+      keywords: ["hod", "eee", "electrical", "department head", "electrical head", "electronics"]
     },
     {
-      id: 'enhanced-eee-dept',
-      text: 'The Electrical & Electronics Engineering department is actively engaged in teaching and research with modern laboratories. Faculty members are involved in research areas of Electrical Engineering and have received multiple NPTEL certificates, AICTE recognitions, and awards. The department has an active IEEE Student Branch.',
-      category: 'academics',
-      keywords: ['eee department', 'electrical electronics engineering', 'power systems', 'control systems', 'electrical engineering', 'eee about', 'ieee student branch']
+      question: "Who is the HOD of Mechanical Department?",
+      answer: "The Head of Department (HOD) for Mechanical Engineering is Dr. Siddabathula Madhusudan.",
+      category: "academics",
+      keywords: ["hod", "mechanical", "department head", "mechanical head", "mech"]
     },
     {
-      id: 'enhanced-it-dept',
-      text: 'The Information Technology department bridges the gap between academic grounding and industry demands. Led by experienced faculty, it focuses on producing graduates with comprehensive knowledge in Information Technology, covering areas like networking, databases, and software systems.',
-      category: 'academics',
-      keywords: ['it department', 'information technology', 'networks', 'database', 'web development', 'software systems', 'it course', 'it about']
+      question: "Who is the HOD of Civil Department?",
+      answer: "The Head of Department (HOD) for Civil Engineering is Gogineni Giri Prasad.",
+      category: "academics",
+      keywords: ["hod", "civil", "department head", "civil head", "civil engineering"]
     },
     {
-      id: 'enhanced-mech-dept',
-      text: 'The Mechanical Engineering department was established in 2010 with AICTE approval and an intake of 90 seats. It offers undergraduate degree programs in Mechanical Engineering with focus on manufacturing, design, and industrial applications.',
-      category: 'academics',
-      keywords: ['mechanical engineering', 'mech department', 'manufacturing', 'design', 'thermal systems', 'industrial automation', 'mech about', 'mechanical course']
+      question: "Who are all the HODs in URCET?",
+      answer: "Here are all the Heads of Departments (HODs) at URCET:\n\n🎓 **Department Heads:**\n• **CSE**: Dr. Roychoudri Subramani\n• **AI**: Dr. K P N V Satya Sree\n• **ECE**: Dr. Battula Nancharaiah\n• **IT**: Yanamadala Veera Venkata Nagendra Vara Prasad\n• **EEE**: Dr. Kelothu Naresh\n• **Mechanical**: Dr. Siddabathula Madhusudan\n• **Civil**: Gogineni Giri Prasad\n\nEach HOD brings extensive experience and expertise to lead their respective departments.",
+      category: "academics",
+      keywords: ["all hods", "department heads", "hod list", "faculty heads", "department leaders"]
     },
     {
-      id: 'enhanced-placement-comprehensive',
-      text: 'URCET has a well-structured Training & Placement department with state-of-the-art infrastructure. Recent campus recruiters include:\n\n• Hyundai & Kia Motors (2023)\n• Swan Technologies\n• IBM, TCS, Wipro, Cognizant\n• Tech Mahindra, Infosys\n• Effectronics, Zen Technologies\n• Global Logic, Just Dial\n\nThe placement cell maintains yearly placement records and provides comprehensive training for students.',
-      category: 'placements',
-      keywords: ['placement cell', 'campus placements', 'job opportunities', 'recruitment', 'career placement', 'company visits', 'hyundai kia', 'tcs ibm', 'placement record', 'placements', 'companies visit']
-    },
-
-    // About URCET
-    {
-      id: 'about-1',
-      text: 'URCET (Usha Rama College of Engineering and Technology) is an engineering college established by Usha Rama Educational Academy. It\'s approved by AICTE, affiliated to JNTU-Kakinada, and sponsored by Chicago-based Multi Million Dollar Advansoft group.',
-      category: 'general',
-      keywords: ['what is urcet', 'about urcet', 'urcet college', 'usha rama college', 'engineering college', 'advansoft', 'educational academy', 'established', 'founded']
+      question: "What are the college timings?",
+      answer: "URCET college timings are from 8:30 AM to 4:00 PM on regular working days.",
+      category: "general",
+      keywords: ["college timings", "working hours", "schedule", "time", "8:30 am", "4:00 pm"]
     },
     {
-      id: 'accreditation-1',
-      text: 'URCET is approved by AICTE, affiliated to JNTU-Kakinada, NAAC accredited, and ISO 21001:2018 certified.',
-      category: 'general',
-      keywords: ['accreditation', 'accredited', 'aicte approved', 'jntu kakinada', 'jntu affiliated', 'naac', 'iso certified', 'approved', 'certification']
-    },
-
-    // B.Tech Courses
-    {
-      id: 'btech-1',
-      text: 'URCET offers 7 B.Tech programs:\n- AI & ML (Artificial Intelligence & Machine Learning)\n- AI & DS (Artificial Intelligence & Data Science)\n- ECE (Electronics & Communication Engineering)\n- CSE (Computer Science Engineering)\n- IT (Information Technology)\n- EEE (Electrical & Electronics Engineering)\n- MECH (Mechanical Engineering)',
-      category: 'academics',
-      keywords: ['btech courses', 'btech programs', 'undergraduate courses', 'what courses', 'engineering courses', 'artificial intelligence', 'machine learning', 'computer science', 'electronics communication', 'mechanical engineering', 'electrical engineering', 'information technology', 'ai ml', 'ai ds', 'cse', 'ece', 'eee', 'mech', 'it', 'btech']
+      question: "Who is the Dean Research and Development?",
+      answer: "Dr. G Sagar is the Dean Research and Development at URCET.",
+      category: "leadership",
+      keywords: ["dean", "research and development", "r&d", "dr g sagar", "research"]
     },
     {
-      id: 'polytechnic-1',
-      text: 'Yes, URCET offers Polytechnic (Diploma) courses in: CSE, MECH, CIVIL, ECE, EEE',
-      category: 'academics',
-      keywords: ['polytechnic courses', 'diploma courses', 'polytechnic programs', 'diploma programs', 'civil engineering diploma', 'does urcet offer polytechnic']
+      question: "What is URCET's policy on ragging?",
+      answer: "URCET has a strict ZERO TOLERANCE policy against ragging. Ragging is completely prohibited and not allowed in the college premises or any college-related activities. The college follows very strict rules and regulations to ensure a safe and respectful environment for all students. Any form of ragging will result in severe disciplinary action including suspension or expulsion.",
+      category: "policies",
+      keywords: ["ragging", "anti-ragging", "zero tolerance", "college rules", "student safety", "discipline", "policies"]
     },
     {
-      id: 'mtech-1',
-      text: 'URCET offers M.Tech in:\n- Cyber Security\n- Robotics & AI\n- CSE - AI & ML\n- CSE\n- VLSI & ES (VLSI & Embedded Systems)',
-      category: 'academics',
-      keywords: ['mtech courses', 'mtech programs', 'masters programs', 'postgraduate courses', 'cyber security', 'robotics artificial intelligence', 'vlsi embedded systems', 'masters degree']
-    },
-
-    // Facilities
-    {
-      id: 'facilities-1',
-      text: 'Key facilities include:\n- Air-conditioned classrooms with multimedia projectors\n- 600+ computer systems in AC labs\n- Wi-Fi across campus\n- Library (8:00 AM to 10:00 PM)\n- Transportation from Vijayawada\n- Free GATE, GRE, TOEFL coaching\n- Work-Study program\n- Research & Development Lab',
-      category: 'facilities',
-      keywords: ['what facilities','about classrooms', 'urcet facilities', 'campus facilities', 'college facilities', 'infrastructure', 'air conditioned classrooms', 'computer labs', 'wifi campus', 'research lab']
+      question: "Is ragging allowed in URCET?",
+      answer: "NO, ragging is strictly prohibited at URCET. The college has a zero tolerance policy against ragging and maintains very strict rules to prevent any form of ragging. URCET is committed to providing a safe, respectful, and harassment-free environment for all students.",
+      category: "policies",
+      keywords: ["ragging prohibited", "not allowed", "strict rules", "zero tolerance", "student safety"]
     },
     {
-      id: 'library-1',
-      text: 'Library is open from 8:00 AM to 10:00 PM daily.',
-      category: 'facilities',
-      keywords: ['library timings', 'about library','library hours', 'library time', 'when library open', 'library timing', 'library schedule', '8am to 10pm', 'library opens']
+      question: "What are the college rules and policies?",
+      answer: "URCET maintains strict rules and policies to ensure a conducive learning environment:\n\n📋 **Key Policies:**\n• **Anti-Ragging**: Zero tolerance policy - Ragging is strictly prohibited\n• **College Timings**: 8:30 AM to 4:00 PM\n• **Discipline**: Professional conduct expected from all students\n• **Safety**: Safe and respectful environment for everyone\n• **Academic Integrity**: High standards of academic honesty\n\nAll students must adhere to these policies for a positive campus experience.",
+      category: "policies",
+      keywords: ["college rules", "policies", "discipline", "conduct", "regulations", "student guidelines"]
     },
-    {
-      id: 'transport-1',
-      text: 'Yes, URCET provides transportation facility from Vijayawada and surrounding places.',
-      category: 'facilities',
-      keywords: ['about transportation','transportation', 'transport facility', 'bus facility', 'does urcet provide transportation', 'transport from vijayawada', 'bus service', 'college bus', 'transportation service']
-    },
-    {
-      id: 'work-study-1',
-      text: 'URCET is the only engineering college that implements a WORK-STUDY program, allowing students to gain practical experience alongside academics.',
-      category: 'academics',
-      keywords: ['work study program', 'work-study', 'practical experience', 'unique program', 'what makes urcet unique', 'work study', 'industry experience']
-    },
-
-    // Admissions & Contact
-    {
-      id: 'admission-1',
-      text: 'For admissions, fill the online admission enquiry form available on the website https://usharama.edu.in/ or contact the admissions office directly.',
-      category: 'admissions',
-      keywords: ['admission process', 'how to apply', 'admission enquiry', 'application form', 'admissions', 'how can i apply', 'admission form', 'apply to urcet']
-    },
-    {
-      id: 'location-1',
-      text: 'Usha Rama College Road, Near Gannavaram Ungutur Mandalam, Telaprolu, Andhra Pradesh 521109',
-      category: 'general',
-      keywords: ['urcet location', 'where is urcet', 'urcet address', 'college location', 'vijayawada', 'andhra pradesh', 'where is college located', 'location']
-    },
-    {
-      id: 'website-1',
-      text: 'Official website: https://usharama.edu.in/',
-      category: 'general',
-      keywords: ['urcet website', 'official website', 'college website', 'usharama website', 'website url', 'site']
-    },
-
-    // Events
-    {
-      id: 'events-1',
-      text: 'yoUR fest is URCET\'s annual techno-cultural festival. The latest was yoUR fest 2025 (website: https://yourfest2025.live/).',
-      category: 'events',
-      keywords: ['your fest', 'yourfest', 'annual fest', 'techno cultural festival', 'urcet fest', 'college festival', 'cultural events', 'technical festival']
-    },
-    {
-      id: 'activities-1',
-      text: 'URCET organizes: Annual Day celebrations, Sports Day, Technical workshops, Blood donation camps (NSS), Eye camps, Campus placements, Research conferences.',
-      category: 'events',
-      keywords: ['college activities', 'campus events', 'annual day', 'sports day', 'technical workshops', 'nss activities', 'blood donation', 'eye camps', 'campus activities']
-    },
-
-    // Placements
-    {
-      id: 'placements-1',
-      text: 'Recent campus recruiters include: Hyundai Mobis & Kia Motors, Swan Technologies, Protine Technologies, Efftronics, and other reputed companies.',
-      category: 'placements',
-      keywords: ['campus placements', 'placement companies', 'recruiters', 'which companies visit', 'job placements', 'hyundai', 'kia motors', 'placement record', 'companies for placements']
-    },
-    {
-      id: 'internships-1',
-      text: 'Yes, URCET provides internship opportunities with reputed companies as part of their industry exposure program.',
-      category: 'placements',
-      keywords: ['internship opportunities', 'internships', 'industry exposure', 'company internships', 'does urcet provide internships', 'internship program']
-    },
-
-    // Special Features
-    {
-      id: 'unique-1',
-      text: 'URCET\'s unique features:\n- Only engineering college with Work-Study program\n- E-Beam Technology & Response Recording Facility\n- Gallery-type seating in AC classrooms\n- Free coaching for competitive exams\n- Chicago-based Advansoft group sponsorship\n- Strong industry connections',
-      category: 'general',
-      keywords: ['what makes urcet unique', 'unique features', 'special features', 'urcet advantages', 'why choose urcet', 'ebeam technology', 'gallery seating', 'advansoft sponsorship']
-    },
-    {
-      id: 'coaching-1',
-      text: 'Yes, URCET provides free coaching for GATE, GRE, and TOEFL to students.',
-      category: 'academics',
-      keywords: ['free coaching', 'gate coaching', 'gre coaching', 'toefl coaching', 'competitive exam coaching', 'does urcet offer coaching', 'exam preparation']
-    }
+    // ...existing code...
   ],
   quickActions: [
-    { id: 'qa-1', label: 'B.Tech Courses', category: 'academics', query: 'btech courses' },
-    { id: 'qa-2', label: 'College Leadership', category: 'general', query: 'management team' },
-    { id: 'qa-3', label: 'About URCET', category: 'general', query: 'about urcet' },
-    { id: 'qa-4', label: 'Contact Details', category: 'general', query: 'contact information' },
-    { id: 'qa-5', label: 'Campus Placements', category: 'placements', query: 'campus placements' },
-    { id: 'qa-6', label: 'Department HODs', category: 'academics', query: 'all hods' },
-    { id: 'qa-7', label: 'AI & ML Course', category: 'academics', query: 'artificial intelligence machine learning' },
-    { id: 'qa-8', label: 'Principal Info', category: 'general', query: 'principal profile' },
-    { id: 'qa-9', label: 'Vice Principal', category: 'general', query: 'vice principal' },
-    { id: 'qa-10', label: 'All Departments', category: 'academics', query: 'departments' }
+    {
+      id: "contact",
+      label: "Contact Information",
+      category: "general",
+      query: "Where is URCET located and how can I contact?"
+    },
+    {
+      id: "timings",
+      label: "College Timings",
+      category: "general",
+      query: "What are the college timings?"
+    },
+    {
+      id: "policies",
+      label: "College Rules & Policies",
+      category: "policies",
+      query: "What are the college rules and policies?"
+    },
+    {
+      id: "courses",
+      label: "Available Courses",
+      category: "academics",
+      query: "What departments and courses does URCET offer?"
+    },
+    {
+      id: "principal",
+      label: "Meet the Principal",
+      category: "leadership",
+      query: "Who is the Principal of URCET?"
+    },
+    {
+      id: "about",
+      label: "About URCET",
+      category: "general",
+      query: "What is URCET?"
+    },
+    {
+      id: "hods",
+      label: "Department Heads",
+      category: "academics",
+      query: "Who are all the HODs in URCET?"
+    },
+    {
+      id: "leadership",
+      label: "Leadership Team",
+      category: "leadership",
+      query: "Who are the leaders of URCET?"
+    }
   ]
 };

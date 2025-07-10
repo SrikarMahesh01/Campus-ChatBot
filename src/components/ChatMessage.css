@@ -48,6 +48,46 @@
   text-align: left;
 }
 
+.bot-indicator {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  font-size: 0.7rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 0.5rem;
+  opacity: 0.8;
+}
+
+.ai-icon {
+  color: #7c3aed;
+  animation: sparkle 2s ease-in-out infinite;
+}
+
+.bot-icon {
+  color: #059669;
+}
+
+@keyframes sparkle {
+  0%,
+  100% {
+    transform: scale(1);
+    opacity: 0.8;
+  }
+  50% {
+    transform: scale(1.1);
+    opacity: 1;
+  }
+}
+
+/* Enhanced styling for AI responses */
+.chat-message.bot .message-content:has(.ai-icon) {
+  background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+  border: 1px solid #7c3aed;
+  border-left: 4px solid #7c3aed;
+}
+
 @keyframes fadeIn {
   from {
     opacity: 0;

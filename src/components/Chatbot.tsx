@@ -88,7 +88,7 @@ export const Chatbot = forwardRef<ChatbotRef, ChatbotProps>(({ isOpen, setIsOpen
       const minDelay = 1000; // 1 second minimum
       setTimeout(() => {
         setIsTyping(false);
-        addMessage(response.text, 'bot', response.category);
+        addMessage(response.answer, 'bot', response.category);
       }, minDelay);
       
     } catch (error) {
@@ -100,7 +100,7 @@ export const Chatbot = forwardRef<ChatbotRef, ChatbotProps>(({ isOpen, setIsOpen
         
         // Fallback to default response
         const fallbackResponse = chatbotService.current.getDefaultResponse();
-        addMessage(fallbackResponse.text, 'bot', fallbackResponse.category);
+        addMessage(fallbackResponse.answer, 'bot', fallbackResponse.category);
       }, 800);
     }
   };

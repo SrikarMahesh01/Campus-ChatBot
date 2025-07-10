@@ -7,8 +7,8 @@ export interface Message {
 }
 
 export interface ChatResponse {
-  id: string;
-  text: string;
+  question: string;
+  answer: string;
   category: string;
   keywords: string[];
 }

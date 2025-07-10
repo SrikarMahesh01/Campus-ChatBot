@@ -1,4 +1,5 @@
 import type { Message } from '../types/chatbot';
+import { Bot, Sparkles } from 'lucide-react';
 import './ChatMessage.css';
 
 interface ChatMessageProps {
@@ -14,9 +15,21 @@ export function ChatMessage({ message }: ChatMessageProps) {
     });
   };
 
+  const isAIGenerated = message.text.includes('category: AI Generated') || 
+                       message.sender === 'bot' && message.text.length > 200;
+
   return (
     <div className={`chat-message ${message.sender}`}>
       <div className="message-content">
+        {message.sender === 'bot' && (
+          <div className="bot-indicator">
+            {isAIGenerated ? (
+              <><Sparkles size={16} className="ai-icon" /> AI Response</>
+            ) : (
+              <><Bot size={16} className="bot-icon" /> Quick Response</>
+            )}
+          </div>
+        )}
         <div className="message-text">{message.text}</div>
         <div className="message-time">{formatTime(message.timestamp)}</div>
       </div>
