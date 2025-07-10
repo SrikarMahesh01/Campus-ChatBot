@@ -88,7 +88,7 @@ export const chatbotData: ChatbotData = {
     },
     {
       question: "What facilities does URCET provide?",
-      answer: "URCET provides world-class facilities for comprehensive education:\n\n🏫 Academic Infrastructure:\n• Air-conditioned classrooms with gallery seating\n• Multimedia projectors in all classrooms\n• E-Beam Technology Response Recording\n• Air-conditioned computer labs (600+ systems)\n• Wi-Fi facility across campus\n\n📚 Student Services:\n• Library facility (8:00 AM to 10:00 PM)\n• Free GATE, GRE, and TOEFL coaching\n• Research & Development Lab\n• Transportation from Vijayawanda and surrounding areas\n\n💼 Unique Features:\n• WORK-STUDY programme implementation\n• Highly experienced qualified teaching staff\n• Industry internship programs\n• Modern laboratory facilities\n• Sports and recreational facilities",
+      answer: "URCET provides world-class facilities for comprehensive education:\n\n🏫 Academic Infrastructure:\n• Air-conditioned classrooms with gallery seating\n• Multimedia projectors in all classrooms\n• E-Beam Technology Response Recording\n• Air-conditioned computer labs (600+ systems)\n• Wi-Fi facility across campus\n\n📚 Student Services:\n• Library facility (8:00 AM to 4:00 PM)\n• Free GATE, GRE, and TOEFL coaching\n• Research & Development Lab\n• Transportation from Vijayawanda and surrounding areas\n\n💼 Unique Features:\n• WORK-STUDY programme implementation\n• Highly experienced qualified teaching staff\n• Industry internship programs\n• Modern laboratory facilities\n• Sports and recreational facilities",
       category: "facilities",
       keywords: ["college facilities", "infrastructure", "amenities", "services", "work study", "library", "transportation"]
     },
@@ -144,13 +144,49 @@ export const chatbotData: ChatbotData = {
       question: "What are the college timings?",
       answer: "URCET college timings are from 8:30 AM to 4:00 PM on regular working days.",
       category: "general",
-      keywords: ["college timings", "working hours", "schedule", "time", "8:30 am", "4:00 pm"]
+      keywords: ["college timings", "working hours", "schedule", "time", "8:30 am", "4:00 pm", "college hours", "office hours", "college time", "timing", "when college open", "when college close", "college timing", "work time", "campus hours", "opening hours", "closing hours"]
     },
     {
-      question: "Who is the Dean Research and Development?",
-      answer: "Dr. G Sagar is the Dean Research and Development at URCET.",
-      category: "leadership",
-      keywords: ["dean", "research and development", "r&d", "dr g sagar", "research"]
+      question: "What are the class timings and daily schedule?",
+      answer: "URCET follows a structured 6-hour academic schedule:\n\n📅 **Daily Class Schedule:**\n• **Total Class Hours**: 6 hours per day\n• **Morning Session**: 8:30 AM - 12:10 PM\n• **Afternoon Session**: 1:00 PM - 4:00 PM\n\n⏰ **Break Timings:**\n• **Morning Break**: 9:40 AM - 10:10 AM (30 minutes)\n• **Lunch Break**: 12:10 PM - 1:00 PM (50 minutes)\n\n🏃 **Sports Hour**: 3:00 PM - 4:00 PM (Daily for all branches)\n\nThis schedule ensures balanced learning with adequate breaks for refreshment and physical activities.",
+      category: "academics",
+      keywords: ["class timings", "daily schedule", "timetable", "class hours", "breaks", "lunch time", "morning break", "academic schedule", "class time", "study time", "when classes", "timing", "schedule", "time table", "routine", "6 hours", "6 hour", "morning session", "afternoon session", "sessions"]
+    },
+    {
+      question: "What are the break timings?",
+      answer: "URCET has two scheduled breaks during the day:\n\n☕ **Morning Break**: 9:40 AM to 10:10 AM (30 minutes)\n🍽️ **Lunch Break**: 12:10 PM to 1:00 PM (50 minutes)\n\nThese breaks provide students time to refresh, have meals, and socialize between classes.",
+      category: "academics",
+      keywords: ["break timings", "morning break", "lunch break", "recess", "break time", "9:40 am", "10:10 am", "12:10 pm", "1:00 pm", "breaks", "tea break", "coffee break", "interval", "rest time", "break schedule", "when break", "break timing", "recess time", "interval timing"]
+    },
+    {
+      question: "When is lunch time?",
+      answer: "Lunch time at URCET is from 12:10 PM to 1:00 PM. This 50-minute lunch break allows students sufficient time to have their meals and relax before afternoon classes begin.",
+      category: "general",
+      keywords: ["lunch time", "lunch break", "meal time", "12:10 pm", "1:00 pm", "lunch hour", "when lunch", "lunch timing", "food time", "eating time", "meal break", "dining time", "lunch schedule", "lunch period", "meal timing"]
+    },
+    {
+      question: "What about sports activities and timing?",
+      answer: "🏃‍♂️ **Sports Hour at URCET:**\n\n⏰ **Timing**: 3:00 PM to 4:00 PM (Daily)\n🎯 **For**: All branches/departments\n📅 **Frequency**: Every day of the week\n\n🏆 **Benefits:**\n• Physical fitness and health\n• Stress relief after academic hours\n• Team building and sportsmanship\n• Mental refreshment\n• Inter-departmental competitions\n\nEvery student is encouraged to participate in sports activities to maintain a healthy work-life balance.",
+      category: "facilities",
+      keywords: ["sports", "sports hour", "physical activities", "games", "fitness", "3:00 pm", "4:00 pm", "daily sports", "all branches", "sports time", "sports timing", "when sports", "physical education", "gym", "exercise", "recreation", "play time", "sports period", "outdoor activities", "indoor games", "sports schedule", "athletics", "recreational activities"]
+    },
+    {
+      question: "What are the library timings?",
+      answer: "📚 **URCET Library Timings:**\n\n🕰️ **Opening Hours**: 8:00 AM to 4:00 PM\n📅 **Days**: Monday to Saturday (Regular working days)\n\n📖 **Library Services:**\n• Extensive collection of books and journals\n• Digital resources and e-books\n• Study spaces and reading areas\n• Research assistance\n• Computer and internet access\n\nThe library provides a quiet and conducive environment for study and research activities.",
+      category: "facilities",
+      keywords: ["library timings", "library hours", "library time", "8:00 am", "4:00 pm", "study hours", "books", "reading", "library timing", "when library open", "library schedule", "library closed", "library working hours", "study time", "reading room", "book access", "library facilities", "study hall", "reading hall"]
+    },
+    {
+      question: "How many hours of classes per day?",
+      answer: "URCET has a 6-hour daily class schedule for all academic programs. These 6 hours are distributed across the day with appropriate breaks:\n\n📚 **Class Distribution:**\n• Morning session with break\n• Afternoon session\n• Total: 6 hours of academic instruction\n• Plus 1 hour dedicated sports time\n\nThis schedule ensures comprehensive coverage of subjects while maintaining student engagement.",
+      category: "academics",
+      keywords: ["class hours", "6 hours", "daily classes", "academic hours", "study time", "class duration", "how many hours", "hours of class", "hours per day", "daily hours", "academic time", "class time", "study hours", "total hours", "hours study", "class period", "academic period"]
+    },
+    {
+      question: "What is the complete daily schedule?",
+      answer: "📅 **URCET Complete Daily Schedule:**\n\n🌅 **8:30 AM - 9:40 AM**: First Session (1 hour 10 minutes)\n☕ **9:40 AM - 10:10 AM**: Morning Break (30 minutes)\n📚 **10:10 AM - 12:10 PM**: Second Session (2 hours)\n🍽️ **12:10 PM - 1:00 PM**: Lunch Break (50 minutes)\n📖 **1:00 PM - 3:00 PM**: Third Session (2 hours)\n🏃 **3:00 PM - 4:00 PM**: Sports Hour (1 hour)\n\n**Total Academic Hours**: 6 hours\n**Total Campus Time**: 7.5 hours (including breaks)\n\nThis balanced schedule promotes both academic excellence and physical well-being.",
+      category: "academics",
+      keywords: ["complete schedule", "daily routine", "full timetable", "campus schedule", "academic schedule", "day plan", "full schedule", "entire schedule", "whole day", "complete timing", "total schedule", "detailed schedule", "time table", "routine", "daily plan", "schedule details", "timing details", "full day schedule"]
     },
     {
       question: "What is URCET's policy on ragging?",
@@ -169,8 +205,7 @@ export const chatbotData: ChatbotData = {
       answer: "URCET maintains strict rules and policies to ensure a conducive learning environment:\n\n📋 **Key Policies:**\n• **Anti-Ragging**: Zero tolerance policy - Ragging is strictly prohibited\n• **College Timings**: 8:30 AM to 4:00 PM\n• **Discipline**: Professional conduct expected from all students\n• **Safety**: Safe and respectful environment for everyone\n• **Academic Integrity**: High standards of academic honesty\n\nAll students must adhere to these policies for a positive campus experience.",
       category: "policies",
       keywords: ["college rules", "policies", "discipline", "conduct", "regulations", "student guidelines"]
-    },
-    // ...existing code...
+    }
   ],
   quickActions: [
     {
@@ -184,6 +219,30 @@ export const chatbotData: ChatbotData = {
       label: "College Timings",
       category: "general",
       query: "What are the college timings?"
+    },
+    {
+      id: "schedule",
+      label: "Daily Schedule",
+      category: "academics",
+      query: "What is the complete daily schedule?"
+    },
+    {
+      id: "breaks",
+      label: "Break Timings",
+      category: "academics",
+      query: "What are the break timings?"
+    },
+    {
+      id: "sports",
+      label: "Sports Hour",
+      category: "facilities",
+      query: "What about sports activities and timing?"
+    },
+    {
+      id: "library",
+      label: "Library Timings",
+      category: "facilities",
+      query: "What are the library timings?"
     },
     {
       id: "policies",

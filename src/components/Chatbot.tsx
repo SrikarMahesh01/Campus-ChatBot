@@ -72,9 +72,6 @@ export const Chatbot = forwardRef<ChatbotRef, ChatbotProps>(({ isOpen, setIsOpen
     // Add user message
     addMessage(userMessage, 'user');
     
-    // Hide quick actions when user sends a message
-    setShowQuickActions(false);
-    
     // Add a small delay before showing typing indicator for more natural feel
     setTimeout(() => {
       setIsTyping(true);
@@ -106,12 +103,17 @@ export const Chatbot = forwardRef<ChatbotRef, ChatbotProps>(({ isOpen, setIsOpen
   };
 
   const handleQuickAction = (query: string) => {
-    setShowQuickActions(false);
+    // Don't hide quick actions when clicking on action buttons
+    // Only hide when explicitly clicking "Hide Quick Actions"
     handleSendMessage(query);
   };
 
   const toggleQuickActions = () => {
     setShowQuickActions(!showQuickActions);
+  };
+
+  const hideQuickActions = () => {
+    setShowQuickActions(false);
   };
 
   const toggleChat = () => {
@@ -135,7 +137,7 @@ export const Chatbot = forwardRef<ChatbotRef, ChatbotProps>(({ isOpen, setIsOpen
 
       {/* Chat Window */}
       {isOpen && (
-        <div className={`chat-window ${isMinimized ? 'minimized' : ''}`}>
+        <div className={`chat-window ${isMinimized ? 'minimized' : ''} ${showQuickActions ? 'expanded' : ''}`}>
           {/* Header */}
           <div className="chat-header">
             <div className="chat-header-info">
@@ -157,45 +159,48 @@ export const Chatbot = forwardRef<ChatbotRef, ChatbotProps>(({ isOpen, setIsOpen
 
           {/* Chat Content */}
           {!isMinimized && (
-            <>
-              <div className="chat-messages">
-                {messages.map(message => (
-                  <ChatMessage key={message.id} message={message} />
-                ))}
-                {isTyping && (
-                  <div className="typing-indicator">
-                    <div className="typing-dots">
-                      <span></span>
-                      <span></span>
-                      <span></span>
-                    </div>
-                    <span className="typing-text">URCET Assistant is typing...</span>
-                  </div>
-                )}
-                <div ref={messagesEndRef} />
-              </div>
-
-              {/* Quick Actions Toggle Button */}
-              <div className="chat-actions">
-                <button 
-                  className={`quick-actions-toggle ${showQuickActions ? 'active' : ''}`}
-                  onClick={toggleQuickActions}
-                >
-                  <Zap size={16} />
-                  <span>{showQuickActions ? 'Hide Quick Actions' : 'Show Quick Actions'}</span>
-                </button>
-              </div>
-
-              {/* Quick Actions Panel */}
+            <div className="chat-content-wrapper">
+              {/* Quick Actions Panel - Left Side */}
               {showQuickActions && (
-                <div className="quick-actions-panel">
-                  <QuickActions onActionClick={handleQuickAction} />
+                <div className="quick-actions-sidebar">
+                  <QuickActions onActionClick={handleQuickAction} onHide={hideQuickActions} />
                 </div>
               )}
+              
+              {/* Main Chat Content */}
+              <div className="chat-main-content">
+                <div className="chat-messages">
+                  {messages.map(message => (
+                    <ChatMessage key={message.id} message={message} />
+                  ))}
+                  {isTyping && (
+                    <div className="typing-indicator">
+                      <div className="typing-dots">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                      </div>
+                      <span className="typing-text">URCET Assistant is typing...</span>
+                    </div>
+                  )}
+                  <div ref={messagesEndRef} />
+                </div>
 
-              {/* Input */}
-              <ChatInput onSendMessage={handleSendMessage} disabled={isTyping} />
-            </>
+                {/* Quick Actions Toggle Button */}
+                <div className="chat-actions">
+                  <button 
+                    className={`quick-actions-toggle ${showQuickActions ? 'active' : ''}`}
+                    onClick={toggleQuickActions}
+                  >
+                    <Zap size={18} />
+                    <span>{showQuickActions ? 'Quick Actions Panel Open' : 'Open Quick Actions'}</span>
+                  </button>
+                </div>
+
+                {/* Input */}
+                <ChatInput onSendMessage={handleSendMessage} disabled={isTyping} />
+              </div>
+            </div>
           )}
         </div>
       )}

@@ -92,3 +92,18 @@ html {
   white-space: nowrap;
   border: 0;
 }
+
+/* Scroll control classes for chatbot */
+.scroll-disabled {
+  overflow: hidden !important;
+  position: fixed !important;
+  width: 100% !important;
+  height: 100% !important;
+}
+
+.scroll-disabled body {
+  overflow: hidden !important;
+  position: fixed !important;
+  width: 100% !important;
+  height: 100% !important;
+}
