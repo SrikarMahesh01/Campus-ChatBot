@@ -83,14 +83,20 @@ export function QuickActions({ onActionClick, onHide }: QuickActionsProps) {
               <button
                 key={action.id}
                 className="quick-action-btn"
-                onClick={() => onActionClick(action.query)}
+                onClick={() => {
+                  if (action.externalLink) {
+                    window.open(action.externalLink, '_blank');
+                  } else {
+                    onActionClick(action.query);
+                  }
+                }}
                 style={{
                   '--category-color': getCategoryColor(action.category)
                 } as React.CSSProperties}
               >
                 <span className="action-icon">{getCategoryIcon(action.category)}</span>
                 <span className="action-label">{action.label}</span>
-                <span className="action-arrow">→</span>
+                <span className="action-arrow">{action.externalLink ? '↗' : '→'}</span>
               </button>
             ))}
           </div>

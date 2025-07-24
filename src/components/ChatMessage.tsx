@@ -30,7 +30,28 @@ export function ChatMessage({ message }: ChatMessageProps) {
             )}
           </div>
         )}
-        <div className="message-text">{message.text}</div>
+        {message.sender === 'bot' ? (
+          (() => {
+            const lines = message.text.split(/\r?\n/).filter(line => line.trim() !== '');
+            if (lines.length > 1) {
+              return (
+                <ul className="message-bullets">
+                  {lines.map((line, idx) => {
+                    // Remove leading bullet characters and whitespace
+                    const cleanedLine = line.replace(/^([•\-\s]+)(?=\S)/, '');
+                    return (
+                      <li key={idx}>{cleanedLine}</li>
+                    );
+                  })}
+                </ul>
+              );
+            } else {
+              return <div className="message-text">{message.text}</div>;
+            }
+          })()
+        ) : (
+          <div className="message-text">{message.text}</div>
+        )}
         <div className="message-time">{formatTime(message.timestamp)}</div>
       </div>
     </div>

@@ -49,7 +49,8 @@ Follow these strict guidelines:
 5. If asked about a specific role or person, only provide information about that specific role or person
 6. Format responses in a clean, easy-to-read way
 7. When discussing leadership roles, only mention the specific role being asked about
-8. If the user's question is not related to Usha Rama College of Engineering and Technology (URCET), its staff, students, courses, facilities, or events, respond with: "As the campus assistant for Usha Rama College of Engineering and Technology, my knowledge is focused on providing information about our college. I'd be happy to answer any questions you have about URCET's academics, events, or campus life."
+8. If asked about Civil Engineering or Civil Department, clearly state that URCET does not offer Civil Engineering programs
+9. If the user's question is not related to Usha Rama College of Engineering and Technology (URCET), its staff, students, courses, facilities, or events, respond with: "As the campus assistant for Usha Rama College of Engineering and Technology, my knowledge is focused on providing information about our college. I'd be happy to answer any questions you have about URCET's academics, events, or campus life."
 
 URCET Detailed Information:
 - Full Name: Usha Rama College of Engineering and Technology
@@ -79,8 +80,7 @@ Department Heads (HODs):
   "ece_hod": "Dr. Battula Nancharaiah",
   "it_hod": "Yanamadala Veera Venkata Nagendra Vara Prasad",
   "eee_hod": "Dr. Kelothu Naresh",
-  "mechanical_hod": "Dr. Siddabathula Madhusudan",
-  "civil_hod": "Gogineni Giri Prasad"
+  "mechanical_hod": "Dr. Siddabathula Madhusudan"
 }
 
 When asked about any leadership position or HOD, only provide information about the specific role requested. Do not list other leadership positions unless explicitly asked for the full leadership team or all HODs.
@@ -148,6 +148,22 @@ Phone: 25-09-2023, 31-07-2023, 05-07-2023, 2023 30-07, 2023, 25-06-2023, 08-05-2
       return exactMatch;
     }
 
+    // Check for exact phrase matches in keywords before extracting individual keywords
+    console.log('🔍 Checking exact phrase match for:', normalizedQuery);
+    const exactPhraseMatch = this.responses.find(response =>
+      response.keywords.some(keyword => {
+        const isMatch = keyword.toLowerCase() === normalizedQuery;
+        if (isMatch) {
+          console.log('✅ Exact phrase match found:', keyword, 'for query:', normalizedQuery);
+        }
+        return isMatch;
+      })
+    );
+    if (exactPhraseMatch) {
+      console.log('🎯 Found exact phrase match:', normalizedQuery);
+      return exactPhraseMatch;
+    }
+
     // Extract keywords from user query
     const userKeywords = this.extractKeywords(normalizedQuery);
     console.log('🔑 Extracted keywords from query:', userKeywords);
@@ -158,7 +174,7 @@ Phone: 25-09-2023, 31-07-2023, 05-07-2023, 2023 30-07, 2023, 25-06-2023, 08-05-2
       return {
         response,
         matchCount,
-        matchScore: this.calculateMatchScore(userKeywords, response.keywords, response.question)
+        matchScore: this.calculateMatchScore(userKeywords, response.keywords, response.question, normalizedQuery)
       };
     }).filter(item => item.matchCount > 0);
 
@@ -170,6 +186,7 @@ Phone: 25-09-2023, 31-07-2023, 05-07-2023, 2023 30-07, 2023, 25-06-2023, 08-05-2
     matchedResponses.sort((a, b) => b.matchScore - a.matchScore);
     
     console.log('🎯 Best match found with score:', matchedResponses[0].matchScore);
+    console.log('🔍 Top 3 matches:', matchedResponses.slice(0, 3).map(m => ({ question: m.response.question, score: m.matchScore })));
     return matchedResponses[0].response;
   }
 
@@ -202,9 +219,26 @@ Phone: 25-09-2023, 31-07-2023, 05-07-2023, 2023 30-07, 2023, 25-06-2023, 08-05-2
     return matchCount;
   }
 
-  private calculateMatchScore(userKeywords: string[], responseKeywords: string[], question: string): number {
+  private calculateMatchScore(userKeywords: string[], responseKeywords: string[], question: string, originalQuery?: string): number {
     let score = 0;
     const questionWords = question.toLowerCase().split(/\s+/);
+    
+    // Check for exact phrase matches first (highest priority)
+    if (originalQuery) {
+      for (const keyword of responseKeywords) {
+        if (keyword.toLowerCase() === originalQuery) {
+          score += 100; // Very high score for exact phrase match
+        }
+      }
+    }
+    
+    // Fallback to keyword-based phrase matching
+    const userQuery = userKeywords.join(' ');
+    for (const keyword of responseKeywords) {
+      if (keyword.toLowerCase() === userQuery) {
+        score += 50; // High score for keyword-based phrase match
+      }
+    }
     
     for (const userKeyword of userKeywords) {
       // Check exact matches in keywords (highest weight)

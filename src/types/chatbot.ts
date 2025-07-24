@@ -18,6 +18,7 @@ export interface QuickAction {
   label: string;
   category: string;
   query: string;
+  externalLink?: string;
 }
 
 export type ChatCategory = 'academics' | 'events' | 'departments' | 'facilities' | 'general';

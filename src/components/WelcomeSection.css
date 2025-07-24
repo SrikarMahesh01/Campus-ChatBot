@@ -230,6 +230,31 @@
   margin: 0;
 }
 
+/* Clickable feature card styles */
+.feature-card.clickable {
+  cursor: pointer;
+  position: relative;
+  display: block;
+}
+
+.feature-card.clickable:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.15);
+}
+
+.external-link-icon {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  font-size: 1.125rem;
+  color: #a0aec0;
+  transition: color 0.3s ease;
+}
+
+.feature-card.clickable:hover .external-link-icon {
+  color: #4299e1;
+}
+
 /* Responsive Design */
 @media (max-width: 1024px) {
   .hero-title {

@@ -40,7 +40,7 @@ export const chatbotData: ChatbotData = {
     },
     {
       question: "What departments and courses does URCET offer?",
-      answer: "URCET offers comprehensive engineering programs:\n\n🎓 B.Tech Programs:\n• Computer Science Engineering (since 2008)\n• Artificial Intelligence & Machine Learning\n• Artificial Intelligence & Data Science\n• Electronics & Communication Engineering\n• Electrical & Electronics Engineering\n• Information Technology\n• Mechanical Engineering\n• Civil Engineering\n\n🏗️ Polytechnic (Diploma) Programs:\n• Computer Science\n• Electronics & Communication Engineering\n• Electrical & Electronics Engineering\n• Mechanical Engineering\n• Civil Engineering\n\n🎯 M.Tech Programs:\n• Cyber Security\n• Robotics\n• AI in Computer Science Engineering\n• AI & Machine Learning in CSE\n• VLSI & Embedded Systems",
+      answer: "URCET offers comprehensive engineering programs:\n\n🎓 B.Tech Programs:\n• Computer Science Engineering (since 2008)\n• Artificial Intelligence & Machine Learning\n• Artificial Intelligence & Data Science\n• Electronics & Communication Engineering\n• Electrical & Electronics Engineering\n• Information Technology\n• Mechanical Engineering\n\n🏗️ Polytechnic (Diploma) Programs:\n• Computer Science\n• Electronics & Communication Engineering\n• Electrical & Electronics Engineering\n• Mechanical Engineering\n\n🎯 M.Tech Programs:\n• Cyber Security\n• Robotics\n• AI in Computer Science Engineering\n• AI & Machine Learning in CSE\n• VLSI & Embedded Systems",
       category: "academics",
       keywords: ["departments", "courses", "programs", "btech", "diploma", "engineering programs", "academic departments", "btech courses", "engineering disciplines"]
     },
@@ -96,49 +96,44 @@ export const chatbotData: ChatbotData = {
       question: "Who is the HOD of CSE Department?",
       answer: "The Head of Department (HOD) for Computer Science Engineering is Dr. Roychoudri Subramani.",
       category: "academics",
-      keywords: ["hod", "department heads", "faculty", "cse hod", "computer science head"]
+      keywords: ["hod of cse", "cse hod", "computer science hod", "computer science head", "cse department head"]
     },
     {
       question: "Who is the HOD of AI Department?",
       answer: "The Head of Department (HOD) for Artificial Intelligence is Dr. K P N V Satya Sree.",
       category: "academics",
-      keywords: ["hod", "ai", "artificial intelligence", "department head", "ai head"]
+      keywords: ["hod of ai", "ai hod", "artificial intelligence hod", "ai department head", "artificial intelligence head"]
     },
     {
       question: "Who is the HOD of ECE Department?",
       answer: "The Head of Department (HOD) for Electronics & Communication Engineering is Dr. Battula Nancharaiah.",
       category: "academics",
-      keywords: ["hod", "ece", "electronics", "department head", "electronics head", "communication"]
+      keywords: ["hod of ece", "ece hod", "electronics hod", "communication hod", "ece department head", "electronics communication head"]
     },
     {
       question: "Who is the HOD of IT Department?",
       answer: "The Head of Department (HOD) for Information Technology is Yanamadala Veera Venkata Nagendra Vara Prasad.",
       category: "academics",
-      keywords: ["hod", "it", "information technology", "department head", "it head"]
+      keywords: ["hod of it", "it hod", "information technology hod", "it department head", "information technology head"]
     },
     {
       question: "Who is the HOD of EEE Department?",
       answer: "The Head of Department (HOD) for Electrical & Electronics Engineering is Dr. Kelothu Naresh.",
       category: "academics",
-      keywords: ["hod", "eee", "electrical", "department head", "electrical head", "electronics"]
+      keywords: ["hod of eee", "eee hod", "electrical hod", "electrical electronics hod", "eee department head", "electrical head"]
     },
     {
       question: "Who is the HOD of Mechanical Department?",
       answer: "The Head of Department (HOD) for Mechanical Engineering is Dr. Siddabathula Madhusudan.",
       category: "academics",
-      keywords: ["hod", "mechanical", "department head", "mechanical head", "mech"]
+      keywords: ["hod of mechanical", "mechanical hod", "mech hod", "hod of mech", "mechanical department head", "mechanical head"]
     },
-    {
-      question: "Who is the HOD of Civil Department?",
-      answer: "The Head of Department (HOD) for Civil Engineering is Gogineni Giri Prasad.",
-      category: "academics",
-      keywords: ["hod", "civil", "department head", "civil head", "civil engineering"]
-    },
+
     {
       question: "Who are all the HODs in URCET?",
-      answer: "Here are all the Heads of Departments (HODs) at URCET:\n\n🎓 **Department Heads:**\n• **CSE**: Dr. Roychoudri Subramani\n• **AI**: Dr. K P N V Satya Sree\n• **ECE**: Dr. Battula Nancharaiah\n• **IT**: Yanamadala Veera Venkata Nagendra Vara Prasad\n• **EEE**: Dr. Kelothu Naresh\n• **Mechanical**: Dr. Siddabathula Madhusudan\n• **Civil**: Gogineni Giri Prasad\n\nEach HOD brings extensive experience and expertise to lead their respective departments.",
+      answer: "Here are all the Heads of Departments (HODs) at URCET:\n\n🎓 **Department Heads:**\n• **CSE**: Dr. Roychoudri Subramani\n• **AI**: Dr. K P N V Satya Sree\n• **ECE**: Dr. Battula Nancharaiah\n• **IT**: Yanamadala Veera Venkata Nagendra Vara Prasad\n• **EEE**: Dr. Kelothu Naresh\n• **Mechanical**: Dr. Siddabathula Madhusudan\n\nEach HOD brings extensive experience and expertise to lead their respective departments.",
       category: "academics",
-      keywords: ["all hods", "department heads", "hod list", "faculty heads", "department leaders"]
+      keywords: ["all hods","Head of the Departments", "department heads", "hod list", "faculty heads", "department leaders"]
     },
     {
       question: "What are the college timings?",
@@ -172,9 +167,9 @@ export const chatbotData: ChatbotData = {
     },
     {
       question: "What are the library timings?",
-      answer: "📚 **URCET Library Timings:**\n\n🕰️ **Opening Hours**: 8:00 AM to 4:00 PM\n📅 **Days**: Monday to Saturday (Regular working days)\n\n📖 **Library Services:**\n• Extensive collection of books and journals\n• Digital resources and e-books\n• Study spaces and reading areas\n• Research assistance\n• Computer and internet access\n\nThe library provides a quiet and conducive environment for study and research activities.",
+      answer: "📚 **URCET Library Timings:**\n\n🕰️ **Opening Hours**: 8:00 AM to 6:00 PM\n📅 **Days**: Monday to Saturday (Regular working days)\n\n📖 **Library Services:**\n• Extensive collection of books and journals\n• Digital resources and e-books\n• Study spaces and reading areas\n• Research assistance\n• Computer and internet access\n\nThe library provides a quiet and conducive environment for study and research activities.",
       category: "facilities",
-      keywords: ["library timings", "library hours", "library time", "8:00 am", "4:00 pm", "study hours", "books", "reading", "library timing", "when library open", "library schedule", "library closed", "library working hours", "study time", "reading room", "book access", "library facilities", "study hall", "reading hall"]
+      keywords: ["library timings", "library hours", "library time", "8:00 am", "6:00 pm", "study hours", "books", "reading", "library timing", "when library open", "library schedule", "library closed", "library working hours", "study time", "reading room", "book access", "library facilities", "study hall", "reading hall"]
     },
     {
       question: "How many hours of classes per day?",
@@ -199,6 +194,18 @@ export const chatbotData: ChatbotData = {
       answer: "NO, ragging is strictly prohibited at URCET. The college has a zero tolerance policy against ragging and maintains very strict rules to prevent any form of ragging. URCET is committed to providing a safe, respectful, and harassment-free environment for all students.",
       category: "policies",
       keywords: ["ragging prohibited", "not allowed", "strict rules", "zero tolerance", "student safety"]
+    },
+    {
+      question: "Tell me about Civil Engineering Department",
+      answer: "URCET currently does not offer Civil Engineering as a program. We focus on the following engineering disciplines:\n\n🎓 **Available B.Tech Programs:**\n• Computer Science Engineering\n• Artificial Intelligence & Machine Learning\n• Artificial Intelligence & Data Science\n• Electronics & Communication Engineering\n• Electrical & Electronics Engineering\n• Information Technology\n• Mechanical Engineering\n\nFor more information about our available programs, please contact our admissions office.",
+      category: "academics",
+      keywords: ["civil engineering", "civil department", "civil course", "civil program", "not offered", "not available", "does not offer civil"]
+    },
+    {
+      question: "Who is the HOD of Civil Department?",
+      answer: "URCET currently does not offer Civil Engineering as a program, so there is no HOD for Civil Department. We offer programs in CSE, AI, ECE, EEE, IT, and Mechanical Engineering departments. For information about available department heads, please ask about our existing departments.",
+      category: "academics",
+      keywords: ["hod of civil", "civil hod", "civil engineering hod", "civil department head", "civil head", "no civil hod"]
     },
     {
       question: "What are the college rules and policies?",
@@ -255,6 +262,13 @@ export const chatbotData: ChatbotData = {
       label: "Available Courses",
       category: "academics",
       query: "What departments and courses does URCET offer?"
+    },
+    {
+      id: "departments",
+      label: "Departments",
+      category: "departments",
+      query: "View all departments",
+      externalLink: "https://usharama.edu.in/departments"
     },
     {
       id: "principal",

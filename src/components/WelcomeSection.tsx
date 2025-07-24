@@ -17,13 +17,15 @@ export function WelcomeSection({ onStartChatting }: WelcomeSectionProps) {
       icon: <Calendar size={20} />,
       title: "Campus Events",
       description: "Tech fests & cultural activities",
-      color: "green"
+      color: "green",
+      link: "https://usharama.edu.in/gallery"
     },
     {
       icon: <Building size={20} />,
       title: "Departments",
       description: "Engineering specializations",
-      color: "purple"
+      color: "purple",
+      link: "https://usharama.edu.in/departments"
     },
     {
       icon: <MapPin size={20} />,
@@ -34,8 +36,8 @@ export function WelcomeSection({ onStartChatting }: WelcomeSectionProps) {
   ];
 
   const stats = [
-    { icon: <Users size={16} />, value: "5000+", label: "Students" },
-    { icon: <Building size={16} />, value: "5", label: "Departments" },
+    { icon: <Users size={16} />, value: "2500+", label: "Students" },
+    { icon: <Building size={16} />, value: "7", label: "Departments" },
     { icon: <Clock size={16} />, value: "24/7", label: "Support" }
   ];
 
@@ -89,11 +91,27 @@ export function WelcomeSection({ onStartChatting }: WelcomeSectionProps) {
           <h2 className="features-title">What can I help you with?</h2>
           <div className="features-grid">
             {features.map((feature, index) => (
-              <div key={index} className={`feature-card ${feature.color}`}>
-                <div className="feature-icon">{feature.icon}</div>
-                <h3 className="feature-title">{feature.title}</h3>
-                <p className="feature-description">{feature.description}</p>
-              </div>
+              feature.link ? (
+                <a 
+                  key={index} 
+                  href={feature.link} 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className={`feature-card ${feature.color} clickable`}
+                  style={{ textDecoration: 'none', color: 'inherit' }}
+                >
+                  <div className="feature-icon">{feature.icon}</div>
+                  <h3 className="feature-title">{feature.title}</h3>
+                  <p className="feature-description">{feature.description}</p>
+                  <span className="external-link-icon">↗</span>
+                </a>
+              ) : (
+                <div key={index} className={`feature-card ${feature.color}`}>
+                  <div className="feature-icon">{feature.icon}</div>
+                  <h3 className="feature-title">{feature.title}</h3>
+                  <p className="feature-description">{feature.description}</p>
+                </div>
+              )
             ))}
           </div>
         </div>
