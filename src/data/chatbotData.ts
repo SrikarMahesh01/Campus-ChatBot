@@ -102,7 +102,7 @@ export const chatbotData: ChatbotData = {
       question: "Who is the HOD of AI Department?",
       answer: "The Head of Department (HOD) for Artificial Intelligence is Dr. K P N V Satya Sree.",
       category: "academics",
-      keywords: ["hod of ai", "ai hod", "artificial intelligence hod", "ai department head", "artificial intelligence head"]
+      keywords: ["hod of ai","Who is AI department Head", "ai hod?","AI HOD", "artificial intelligence hod", "ai department head", "artificial intelligence head"]
     },
     {
       question: "Who is the HOD of ECE Department?",
@@ -212,6 +212,48 @@ export const chatbotData: ChatbotData = {
       answer: "URCET maintains strict rules and policies to ensure a conducive learning environment:\n\n📋 **Key Policies:**\n• **Anti-Ragging**: Zero tolerance policy - Ragging is strictly prohibited\n• **College Timings**: 8:30 AM to 4:00 PM\n• **Discipline**: Professional conduct expected from all students\n• **Safety**: Safe and respectful environment for everyone\n• **Academic Integrity**: High standards of academic honesty\n\nAll students must adhere to these policies for a positive campus experience.",
       category: "policies",
       keywords: ["college rules", "policies", "discipline", "conduct", "regulations", "student guidelines"]
+    },
+    {
+      question: "Who is the HOD of Machine Learning / ML?",
+      answer: "Machine Learning (ML) is a subject/course, not a department. HODs are only assigned to departments, not individual subjects.\n\n📚 **ML is taught in these departments:**\n• **AI Department**: Dr. K P N V Satya Sree (HOD)\n• **CSE Department**: Dr. Roychoudri Subramani (HOD)\n\nFor ML-related queries, you can contact the AI or CSE department heads.",
+      category: "academics",
+      keywords: ["ml hod", "machine learning hod", "ml head", "machine learning head", "hod of ml", "hod of machine learning"]
+    },
+    {
+      question: "Who is the HOD of Java?",
+      answer: "Java is a programming language/subject, not a department. HODs are only assigned to departments, not individual subjects or programming languages.\n\n💻 **Java is taught in these departments:**\n• **CSE Department**: Dr. Roychoudri Subramani (HOD)\n• **IT Department**: Yanamadala Veera Venkata Nagendra Vara Prasad (HOD)\n\nFor Java programming queries, you can contact the CSE or IT department heads.",
+      category: "academics",
+      keywords: ["java hod", "java head", "hod of java", "java programming hod"]
+    },
+    {
+      question: "Who is the HOD of Python?",
+      answer: "Python is a programming language/subject, not a department. HODs are only assigned to departments, not individual subjects or programming languages.\n\n🐍 **Python is taught in these departments:**\n• **CSE Department**: Dr. Roychoudri Subramani (HOD)\n• **AI Department**: Dr. K P N V Satya Sree (HOD)\n• **IT Department**: Yanamadala Veera Venkata Nagendra Vara Prasad (HOD)\n\nFor Python programming queries, you can contact the respective department heads.",
+      category: "academics",
+      keywords: ["python hod", "python head", "hod of python", "python programming hod"]
+    },
+    {
+      question: "Who is the HOD of Data Science?",
+      answer: "Data Science is a subject/specialization, not a separate department. HODs are only assigned to departments, not individual subjects.\n\n📊 **Data Science is covered in:**\n• **AI Department**: Dr. K P N V Satya Sree (HOD) - Offers AI & Data Science program\n• **CSE Department**: Dr. Roychoudri Subramani (HOD)\n\nFor Data Science queries, you can contact the AI or CSE department heads.",
+      category: "academics",
+      keywords: ["data science hod", "data science head", "hod of data science", "ds hod"]
+    },
+    {
+      question: "Who is the HOD of Web Development?",
+      answer: "Web Development is a subject/skill area, not a department. HODs are only assigned to departments, not individual subjects or technologies.\n\n🌐 **Web Development is taught in:**\n• **CSE Department**: Dr. Roychoudri Subramani (HOD)\n• **IT Department**: Yanamadala Veera Venkata Nagendra Vara Prasad (HOD)\n\nFor Web Development queries, you can contact the CSE or IT department heads.",
+      category: "academics",
+      keywords: ["web development hod", "web dev hod", "hod of web development", "website development hod"]
+    },
+    {
+      question: "Who is the HOD of Database Management / DBMS?",
+      answer: "Database Management (DBMS) is a subject, not a department. HODs are only assigned to departments, not individual subjects.\n\n🗄️ **DBMS is taught in:**\n• **CSE Department**: Dr. Roychoudri Subramani (HOD)\n• **IT Department**: Yanamadala Veera Venkata Nagendra Vara Prasad (HOD)\n\nFor DBMS queries, you can contact the CSE or IT department heads.",
+      category: "academics",
+      keywords: ["dbms hod", "database hod", "hod of dbms", "database management hod", "hod of database"]
+    },
+    {
+      question: "Subject HODs clarification",
+      answer: "❗ **Important Clarification:**\n\nHODs (Heads of Departments) are assigned to **DEPARTMENTS**, not to individual subjects or courses.\n\n🏛️ **URCET Departments & Their HODs:**\n• **CSE**: Dr. Roychoudri Subramani\n• **AI**: Dr. K P N V Satya Sree\n• **ECE**: Dr. Battula Nancharaiah\n• **IT**: Yanamadala Veera Venkata Nagendra Vara Prasad\n• **EEE**: Dr. Kelothu Naresh\n• **Mechanical**: Dr. Siddabathula Madhusudan\n\n📚 **Subjects like ML, Java, Python, Web Development, etc. are courses taught within these departments.**\n\nFor subject-specific queries, contact the relevant department HOD.",
+      category: "academics",
+      keywords: ["subjects hod", "course hod", "no hod for subjects", "subjects have no hod", "clarification"]
     }
   ],
   quickActions: [
