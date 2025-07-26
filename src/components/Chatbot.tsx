@@ -3,7 +3,7 @@ import { MessageCircle, X, Minimize2, Zap } from 'lucide-react';
 import type { Message } from '../types/chatbot';
 import { ChatbotService } from '../services/chatbotService';
 import { ChatMessage } from './ChatMessage';
-import { ChatInput } from './ChatInput';
+import { ChatInput, ChatInputRef } from './ChatInput';
 import { QuickActions } from './QuickActions';
 import './Chatbot.css';
 
@@ -22,12 +22,17 @@ export const Chatbot = forwardRef<ChatbotRef, ChatbotProps>(({ isOpen, setIsOpen
   const [messages, setMessages] = useState<Message[]>([]);
   const [isTyping, setIsTyping] = useState(false);
   const messagesEndRef = useRef<HTMLDivElement>(null);
+  const chatInputRef = useRef<ChatInputRef>(null);
   const chatbotService = useRef(new ChatbotService());
 
   useImperativeHandle(ref, () => ({
     openChat: () => {
       setIsOpen(true);
       setIsMinimized(false);
+      // Focus input when opening chat programmatically
+      setTimeout(() => {
+        chatInputRef.current?.focus();
+      }, 100);
     }
   }));
 
@@ -42,6 +47,11 @@ export const Chatbot = forwardRef<ChatbotRef, ChatbotProps>(({ isOpen, setIsOpen
         category: 'general'
       };
       setMessages([welcomeMessage]);
+      
+      // Focus input after welcome message
+      setTimeout(() => {
+        chatInputRef.current?.focus();
+      }, 500);
     }
   }, [isOpen, messages.length]);
 
@@ -86,6 +96,10 @@ export const Chatbot = forwardRef<ChatbotRef, ChatbotProps>(({ isOpen, setIsOpen
       setTimeout(() => {
         setIsTyping(false);
         addMessage(response.answer, 'bot', response.category);
+        // Focus the input after bot response
+        setTimeout(() => {
+          chatInputRef.current?.focus();
+        }, 100);
       }, minDelay);
       
     } catch (error) {
@@ -98,6 +112,10 @@ export const Chatbot = forwardRef<ChatbotRef, ChatbotProps>(({ isOpen, setIsOpen
         // Fallback to default response
         const fallbackResponse = chatbotService.current.getDefaultResponse();
         addMessage(fallbackResponse.answer, 'bot', fallbackResponse.category);
+        // Focus the input after fallback response
+        setTimeout(() => {
+          chatInputRef.current?.focus();
+        }, 100);
       }, 800);
     }
   };
@@ -117,12 +135,28 @@ export const Chatbot = forwardRef<ChatbotRef, ChatbotProps>(({ isOpen, setIsOpen
   };
 
   const toggleChat = () => {
-    setIsOpen(!isOpen);
+    const newOpenState = !isOpen;
+    setIsOpen(newOpenState);
     setIsMinimized(false);
+    
+    // Focus input when opening chat
+    if (newOpenState) {
+      setTimeout(() => {
+        chatInputRef.current?.focus();
+      }, 100);
+    }
   };
 
   const toggleMinimize = () => {
-    setIsMinimized(!isMinimized);
+    const newMinimizedState = !isMinimized;
+    setIsMinimized(newMinimizedState);
+    
+    // Focus input when unminimizing
+    if (!newMinimizedState) {
+      setTimeout(() => {
+        chatInputRef.current?.focus();
+      }, 100);
+    }
   };
 
   return (
@@ -198,7 +232,7 @@ export const Chatbot = forwardRef<ChatbotRef, ChatbotProps>(({ isOpen, setIsOpen
                 </div>
 
                 {/* Input */}
-                <ChatInput onSendMessage={handleSendMessage} disabled={isTyping} />
+                <ChatInput ref={chatInputRef} onSendMessage={handleSendMessage} disabled={isTyping} />
               </div>
             </div>
           )}

@@ -179,7 +179,7 @@ export const chatbotData: ChatbotData = {
     },
     {
       question: "What is the complete daily schedule?",
-      answer: "📅 **URCET Complete Daily Schedule:**\n\n🌅 **8:30 AM - 9:40 AM**: First Session (1 hour 10 minutes)\n☕ **9:40 AM - 10:10 AM**: Morning Break (30 minutes)\n📚 **10:10 AM - 12:10 PM**: Second Session (2 hours)\n🍽️ **12:10 PM - 1:00 PM**: Lunch Break (50 minutes)\n📖 **1:00 PM - 3:00 PM**: Third Session (2 hours)\n🏃 **3:00 PM - 4:00 PM**: Sports Hour (1 hour)\n\n**Total Academic Hours**: 6 hours\n**Total Campus Time**: 7.5 hours (including breaks)\n\nThis balanced schedule promotes both academic excellence and physical well-being.",
+      answer: "📅 **URCET Complete Daily Schedule:**\n\n🌅 **8:40 AM - 9:40 AM**: First Session (1 hour)\n☕ **9:40 AM - 10:10 AM**: Morning Break (30 minutes)\n📚 **10:10 AM - 11:10 AM**: Second Session (1 hour)\n📚 **11:10 AM - 12:10 PM**: Third Session (1 hour)\n🍽️ **12:10 PM - 1:00 PM**: Lunch Break (50 minutes)\n📖 **1:00 PM - 2:00 PM**: Fourth Session (1 hour)\n📖 **2:00 PM - 3:00 PM**: Fifth Session (1 hour)\n🏃 **3:00 PM - 4:00 PM**: Sports Hour (1 hour)\n\n**Total Academic Hours**: 6 hours\n**Total Campus Time**: 7.5 hours (including breaks)\n\nThis balanced schedule promotes both academic excellence and physical well-being.",
       category: "academics",
       keywords: ["complete schedule", "daily routine", "full timetable", "campus schedule", "academic schedule", "day plan", "full schedule", "entire schedule", "whole day", "complete timing", "total schedule", "detailed schedule", "time table", "routine", "daily plan", "schedule details", "timing details", "full day schedule"]
     },
