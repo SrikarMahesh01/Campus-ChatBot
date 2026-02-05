@@ -1,0 +1,13 @@
+{
+  "name": "campus-chatbot-server",
+  "version": "1.0.0",
+  "description": "Production server for Campus ChatBot",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "express": "^4.18.2",
+    "path": "^0.12.7"
+  }
+}

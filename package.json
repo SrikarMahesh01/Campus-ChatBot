@@ -6,8 +6,12 @@
   "scripts": {
     "dev": "vite",
     "build": "tsc -b && vite build",
+    "build:prod": "NODE_ENV=production tsc -b && vite build",
     "lint": "eslint .",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "start": "vite preview --port 3500 --host 0.0.0.0",
+    "serve": "node production-server.js",
+    "serve:secure": "node production-server.js"
   },
   "dependencies": {
     "@google/generative-ai": "^0.24.1",
@@ -15,6 +19,7 @@
     "axios": "^1.10.0",
     "cheerio": "^1.1.0",
     "dotenv": "^17.2.0",
+    "express": "^4.21.1",
     "lucide-react": "^0.525.0",
     "natural": "^8.1.0",
     "react": "^19.1.0",

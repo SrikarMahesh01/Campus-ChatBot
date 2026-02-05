@@ -92,41 +92,42 @@ export const chatbotData: ChatbotData = {
       category: "facilities",
       keywords: ["college facilities", "infrastructure", "amenities", "services", "work study", "library", "transportation"]
     },
+        {
+      question: "Who is the HOD of AI Department?",
+      answer: "The Head of Department (HOD) for Artificial Intelligence is Dr. K P N V Satya Sree.",
+      category: "academics",
+      keywords: ["hod of ai","hod ai","Who is AI department Head", "ai hod?","AI HOD", "artificial intelligence hod", "ai department head", "artificial intelligence head"]
+    },
     {
       question: "Who is the HOD of CSE Department?",
       answer: "The Head of Department (HOD) for Computer Science Engineering is Dr. Roychoudri Subramani.",
       category: "academics",
-      keywords: ["hod of cse", "cse hod", "computer science hod", "computer science head", "cse department head"]
+      keywords: ["hod of cse","hod cse","cse hod", "computer science hod", "computer science head", "cse department head"]
     },
-    {
-      question: "Who is the HOD of AI Department?",
-      answer: "The Head of Department (HOD) for Artificial Intelligence is Dr. K P N V Satya Sree.",
-      category: "academics",
-      keywords: ["hod of ai","Who is AI department Head", "ai hod?","AI HOD", "artificial intelligence hod", "ai department head", "artificial intelligence head"]
-    },
+
     {
       question: "Who is the HOD of ECE Department?",
       answer: "The Head of Department (HOD) for Electronics & Communication Engineering is Dr. Battula Nancharaiah.",
       category: "academics",
-      keywords: ["hod of ece", "ece hod", "electronics hod", "communication hod", "ece department head", "electronics communication head"]
+      keywords: ["hod of ece", "hod ece", "ece hod", "electronics hod", "communication hod", "ece department head", "electronics communication head"]
     },
     {
       question: "Who is the HOD of IT Department?",
       answer: "The Head of Department (HOD) for Information Technology is Yanamadala Veera Venkata Nagendra Vara Prasad.",
       category: "academics",
-      keywords: ["hod of it", "it hod", "information technology hod", "it department head", "information technology head"]
+      keywords: ["hod of it","hod it","it hod", "information technology hod", "it department head", "information technology head"]
     },
     {
       question: "Who is the HOD of EEE Department?",
       answer: "The Head of Department (HOD) for Electrical & Electronics Engineering is Dr. Kelothu Naresh.",
       category: "academics",
-      keywords: ["hod of eee", "eee hod", "electrical hod", "electrical electronics hod", "eee department head", "electrical head"]
+      keywords: ["hod of eee","hod eee", "eee hod", "electrical hod", "electrical electronics hod", "eee department head", "electrical head"]
     },
     {
       question: "Who is the HOD of Mechanical Department?",
       answer: "The Head of Department (HOD) for Mechanical Engineering is Dr. Siddabathula Madhusudan.",
       category: "academics",
-      keywords: ["hod of mechanical", "mechanical hod", "mech hod", "hod of mech", "mechanical department head", "mechanical head"]
+      keywords: ["hod of mechanical","hod mechanical","hod mech","mechanical hod", "mech hod", "hod of mech", "mechanical department head", "mechanical head"]
     },
 
     {

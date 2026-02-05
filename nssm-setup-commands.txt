@@ -1,0 +1,35 @@
+# NSSM Command Line Setup for Campus ChatBot
+# Run these commands in PowerShell as Administrator
+
+# Navigate to project directory
+cd "c:\Users\admin\Desktop\YSM\Campus-ChatBot"
+
+# Create logs directory
+New-Item -ItemType Directory -Force -Path "logs"
+
+# Install the service
+nssm install Campus-ChatBot npm run serve
+nssm set Campus-ChatBot AppDirectory "c:\Users\admin\Desktop\YSM\Campus-ChatBot"
+
+# Set description and startup
+nssm set Campus-ChatBot Description "URCET Campus ChatBot Assistant - Port 3500"
+nssm set Campus-ChatBot Start SERVICE_AUTO_START
+
+# Configure restart behavior
+nssm set Campus-ChatBot AppExit Default Restart
+nssm set Campus-ChatBot AppRestartDelay 30000
+
+# Configure logging
+nssm set Campus-ChatBot AppStdout "c:\Users\admin\Desktop\YSM\Campus-ChatBot\logs\stdout.log"
+nssm set Campus-ChatBot AppStderr "c:\Users\admin\Desktop\YSM\Campus-ChatBot\logs\stderr.log"
+nssm set Campus-ChatBot AppStdoutCreationDisposition 4
+nssm set Campus-ChatBot AppStderrCreationDisposition 4
+
+# Open firewall port
+New-NetFirewallRule -DisplayName "Campus ChatBot Port 3500" -Direction Inbound -Protocol TCP -LocalPort 3500 -Action Allow
+
+# Start the service
+nssm start Campus-ChatBot
+
+# Check status
+nssm status Campus-ChatBot
